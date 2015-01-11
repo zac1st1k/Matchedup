@@ -15,6 +15,7 @@
 		117BA6C01A62A68500923A25 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 117BA6BF1A62A68500923A25 /* Images.xcassets */; };
 		117BA6C31A62A68500923A25 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 117BA6C11A62A68500923A25 /* LaunchScreen.xib */; };
 		117BA6CF1A62A68500923A25 /* MatchedupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BA6CE1A62A68500923A25 /* MatchedupTests.m */; };
+		117BA6DA1A62A77B00923A25 /* XZZLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BA6D91A62A77B00923A25 /* XZZLoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		117BA6C81A62A68500923A25 /* MatchedupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchedupTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		117BA6CD1A62A68500923A25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		117BA6CE1A62A68500923A25 /* MatchedupTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchedupTests.m; sourceTree = "<group>"; };
+		117BA6D81A62A77B00923A25 /* XZZLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZZLoginViewController.h; sourceTree = "<group>"; };
+		117BA6D91A62A77B00923A25 /* XZZLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZZLoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,7 @@
 				117BA6B91A62A68500923A25 /* SecondViewController.h */,
 				117BA6BA1A62A68500923A25 /* SecondViewController.m */,
 				117BA6BC1A62A68500923A25 /* Main.storyboard */,
+				117BA6DB1A62A78500923A25 /* Login */,
 				117BA6BF1A62A68500923A25 /* Images.xcassets */,
 				117BA6C11A62A68500923A25 /* LaunchScreen.xib */,
 				117BA6AF1A62A68500923A25 /* Supporting Files */,
@@ -122,6 +126,15 @@
 				117BA6CD1A62A68500923A25 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		117BA6DB1A62A78500923A25 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				117BA6D81A62A77B00923A25 /* XZZLoginViewController.h */,
+				117BA6D91A62A77B00923A25 /* XZZLoginViewController.m */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +241,7 @@
 				117BA6B51A62A68500923A25 /* AppDelegate.m in Sources */,
 				117BA6B81A62A68500923A25 /* FirstViewController.m in Sources */,
 				117BA6B21A62A68500923A25 /* main.m in Sources */,
+				117BA6DA1A62A77B00923A25 /* XZZLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
