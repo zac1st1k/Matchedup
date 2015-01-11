@@ -7,6 +7,7 @@
 //
 
 #import "XZZLoginViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface XZZLoginViewController ()
 
@@ -19,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    FBLoginView *loginView = [[FBLoginView alloc] init];
+    loginView.center = self.view.center;
+    [self.view addSubview:loginView];
 }
 
 - (void)didReceiveMemoryWarning {

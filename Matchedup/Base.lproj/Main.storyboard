@@ -98,9 +98,6 @@
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zC1-pG-yKz">
                                 <rect key="frame" x="290" y="290" width="20" height="20"/>
-                                <variation key="widthClass=compact" ambiguous="YES">
-                                    <rect key="frame" x="190" y="290" width="20" height="20"/>
-                                </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="190" y="390" width="20" height="20"/>
                                 </variation>
@@ -110,9 +107,6 @@
                                 <state key="normal" title="Login with Facebook">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="129" y="534" width="143" height="30"/>
-                                </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="129" y="750" width="143" height="30"/>
                                 </variation>
@@ -126,13 +120,11 @@
                             <constraint firstAttribute="centerX" secondItem="Yzd-BD-i43" secondAttribute="centerX" constant="-0.5" id="3bt-Vy-3q1"/>
                             <constraint firstAttribute="centerY" secondItem="zC1-pG-yKz" secondAttribute="centerY" id="Eg3-wF-c0c"/>
                             <constraint firstItem="l0v-T9-1Ux" firstAttribute="top" secondItem="Yzd-BD-i43" secondAttribute="bottom" constant="36" id="FEd-21-lun"/>
-                            <constraint firstItem="zC1-pG-yKz" firstAttribute="width" secondItem="Yzd-BD-i43" secondAttribute="width" id="dfX-LK-YO0"/>
                             <constraint firstAttribute="centerX" secondItem="zC1-pG-yKz" secondAttribute="centerX" id="gLV-zh-TIX"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Eg3-wF-c0c"/>
-                                <exclude reference="dfX-LK-YO0"/>
                                 <exclude reference="gLV-zh-TIX"/>
                                 <exclude reference="3bt-Vy-3q1"/>
                                 <exclude reference="FEd-21-lun"/>
@@ -141,7 +133,6 @@
                         <variation key="widthClass=compact">
                             <mask key="constraints">
                                 <include reference="Eg3-wF-c0c"/>
-                                <include reference="dfX-LK-YO0"/>
                                 <include reference="gLV-zh-TIX"/>
                                 <include reference="3bt-Vy-3q1"/>
                                 <include reference="FEd-21-lun"/>
