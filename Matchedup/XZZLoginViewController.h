@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XZZLoginViewController : UIViewController
+@interface XZZLoginViewController : UIViewController <NSURLConnectionDataDelegate>
 
 @end

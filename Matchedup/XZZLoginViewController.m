@@ -7,13 +7,15 @@
 //
 
 #import "XZZLoginViewController.h"
+#import "XZZConstants.h"
+#import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
-#import "XZZConstants.h"
 
 @interface XZZLoginViewController ()
 
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (strong, nonatomic) NSMutableData *imageData;
 
 @end
 
@@ -27,6 +29,14 @@
     //    FBLoginView *loginView = [[FBLoginView alloc] init];
     //    loginView.center = self.view.center;
     //    [self.view addSubview:loginView];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
+        [self updateUserInformation];
+        [self performSegueWithIdentifier:@"loginToTabBarSegue" sender:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -106,16 +116,66 @@
             }
             
             if ([pictureURL absoluteString]) {
-                userProfile[kXZZUserPictureURL] = [pictureURL absoluteString];
+                userProfile[kXZZUserProfilePictureURL] = [pictureURL absoluteString];
             }
-            
             [[PFUser currentUser] setObject:userProfile forKey:kXZZUserProfileKey];
             [[PFUser currentUser] saveInBackground];
+            [self requestImage];
         }
         else{
             NSLog(@"Error in FB request %@", error);
         }
     }];
+}
+
+- (void)uploadPFFileToParse:(UIImage *)image
+{
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.8);
+    if (!imageData) {
+        NSLog(@"imageData was not found.");
+        return;
+    }
+    PFFile *photoFile = [PFFile fileWithData:imageData];
+    [photoFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            PFObject *photo = [PFObject objectWithClassName:kXZZPhotoClassKey];
+            [photo setObject:[PFUser currentUser] forKey:kXZZPhotoUserKey];
+            [photo setObject:photoFile forKey:kXZZPhotoPictureKey];
+            [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                NSLog(@"Photo saved successfully");
+            }];
+        }
+    }];
+    
+}
+
+- (void)requestImage
+{
+    PFQuery *query = [PFQuery queryWithClassName:kXZZPhotoClassKey];
+    [query whereKey:kXZZPhotoUserKey equalTo:[PFUser currentUser]];
+    [query countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+        if (number == 0) {
+            PFUser *user = [PFUser currentUser];
+            self.imageData = [[NSMutableData alloc] init];
+            NSURL *profilePictureURL = [NSURL URLWithString:user[kXZZUserProfileKey][kXZZUserProfilePictureURL]];
+            NSURLRequest *urlRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:4.0f];
+            NSURLConnection *urlconnection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
+            if (!urlconnection) {
+                NSLog(@"Failed to download picture.");
+            }
+        }
+    }];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [self.imageData appendData:data];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    UIImage *profileImage = [UIImage imageWithData:self.imageData];
+    [self uploadPFFileToParse:profileImage];
 }
 
 @end

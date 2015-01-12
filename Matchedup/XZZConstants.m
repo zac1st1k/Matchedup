@@ -19,12 +19,12 @@ NSString *const kXZZUserProfileLocationKey = @"location";
 NSString *const kXZZUserProfileGenderKey = @"gender";
 NSString *const kXZZUserProfileBirthdayKey = @"birthday";
 NSString *const kXZZUserProfileInterestedInKey = @"interestedIn";
-NSString *const kXZZUserPictureURL = @"pictureURL";
+NSString *const kXZZUserProfilePictureURL = @"pictureURL";
 
 #pragma mark - Photo Class
 
-NSString *const kCCPhotoClassKey = @"Photo";
-NSString *const kCCPhotoUserKey = @"user";
-NSString *const kCCPhotoPictureKey = @"image";
+NSString *const kXZZPhotoClassKey = @"Photo";
+NSString *const kXZZPhotoUserKey = @"user";
+NSString *const kXZZPhotoPictureKey = @"image";
 
 @end
