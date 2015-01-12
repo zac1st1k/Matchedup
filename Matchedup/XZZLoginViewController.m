@@ -9,6 +9,7 @@
 #import "XZZLoginViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
+#import "XZZConstants.h"
 
 @interface XZZLoginViewController ()
 
@@ -23,9 +24,9 @@
     // Do any additional setup after loading the view.
     self.activityIndicator.hidden = YES;
     
-//    FBLoginView *loginView = [[FBLoginView alloc] init];
-//    loginView.center = self.view.center;
-//    [self.view addSubview:loginView];
+    //    FBLoginView *loginView = [[FBLoginView alloc] init];
+    //    loginView.center = self.view.center;
+    //    [self.view addSubview:loginView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,14 +35,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 #pragma mark - IBAction
 
@@ -64,7 +65,55 @@
             }
         }
         else {
+            [self updateUserInformation];
             [self performSegueWithIdentifier:@"loginToTabBarSegue" sender:self];
+        }
+    }];
+}
+
+#pragma mark - Helper Method
+
+- (void)updateUserInformation
+{
+    FBRequest *request = [FBRequest requestForMe];
+    [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//        NSLog(@"%@", result);
+        if (!error) {
+            NSDictionary *userDictionary = (NSDictionary *)result;
+            
+            //create URL
+            NSString *facebookID = userDictionary[@"id"];
+            NSURL *pictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resource=1",facebookID]];
+            
+            NSMutableDictionary *userProfile = [[NSMutableDictionary alloc] initWithCapacity:8];
+            if (userDictionary[@"name"]) {
+                userProfile[kXZZUserProfileNameKey] = userDictionary[@"name"];
+            }
+            if (userDictionary[@"first_name"]) {
+                userProfile[kXZZUserProfileFirstNameKey] = userDictionary[@"first_name"];
+            }
+            if (userDictionary[@"location"][@"name"]) {
+                userProfile[kXZZUserProfileLocationKey] = userDictionary[@"location"][@"name"];
+            }
+            if (userDictionary[@"gender"]) {
+                userProfile[kXZZUserProfileGenderKey] = userDictionary[@"gender"];
+            }
+            if (userDictionary[@"birthday"]) {
+                userProfile[kXZZUserProfileBirthdayKey] = userDictionary[@"birthday"];
+            }
+            if (userDictionary[@"interested_in"]) {
+                userProfile[kXZZUserProfileInterestedInKey] = userDictionary[@"interested_in"];
+            }
+            
+            if ([pictureURL absoluteString]) {
+                userProfile[kXZZUserPictureURL] = [pictureURL absoluteString];
+            }
+            
+            [[PFUser currentUser] setObject:userProfile forKey:kXZZUserProfileKey];
+            [[PFUser currentUser] saveInBackground];
+        }
+        else{
+            NSLog(@"Error in FB request %@", error);
         }
     }];
 }

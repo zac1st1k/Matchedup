@@ -16,6 +16,7 @@
 		117BA6C31A62A68500923A25 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 117BA6C11A62A68500923A25 /* LaunchScreen.xib */; };
 		117BA6CF1A62A68500923A25 /* MatchedupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BA6CE1A62A68500923A25 /* MatchedupTests.m */; };
 		117BA6DA1A62A77B00923A25 /* XZZLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BA6D91A62A77B00923A25 /* XZZLoginViewController.m */; };
+		117BA6DE1A638B2500923A25 /* XZZConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BA6DD1A638B2500923A25 /* XZZConstants.m */; };
 		3A999F2228982A4AE175E7F2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEA65C981A5CC0D8EBD7B24 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,8 @@
 		117BA6CE1A62A68500923A25 /* MatchedupTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchedupTests.m; sourceTree = "<group>"; };
 		117BA6D81A62A77B00923A25 /* XZZLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZZLoginViewController.h; sourceTree = "<group>"; };
 		117BA6D91A62A77B00923A25 /* XZZLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZZLoginViewController.m; sourceTree = "<group>"; };
+		117BA6DC1A638B2500923A25 /* XZZConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZZConstants.h; sourceTree = "<group>"; };
+		117BA6DD1A638B2500923A25 /* XZZConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZZConstants.m; sourceTree = "<group>"; };
 		5FEA65C981A5CC0D8EBD7B24 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8463E9A5F31DA5AED5C86A3F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E88652461C084C278C0ADDAB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 		117BA6AF1A62A68500923A25 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				117BA6DC1A638B2500923A25 /* XZZConstants.h */,
+				117BA6DD1A638B2500923A25 /* XZZConstants.m */,
 				117BA6B01A62A68500923A25 /* Info.plist */,
 				117BA6B11A62A68500923A25 /* main.m */,
 			);
@@ -300,6 +305,7 @@
 				117BA6B51A62A68500923A25 /* AppDelegate.m in Sources */,
 				117BA6B81A62A68500923A25 /* FirstViewController.m in Sources */,
 				117BA6B21A62A68500923A25 /* main.m in Sources */,
+				117BA6DE1A638B2500923A25 /* XZZConstants.m in Sources */,
 				117BA6DA1A62A77B00923A25 /* XZZLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
