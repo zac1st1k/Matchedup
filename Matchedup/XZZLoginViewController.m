@@ -8,6 +8,7 @@
 
 #import "XZZLoginViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 
 @interface XZZLoginViewController ()
 
@@ -20,9 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    FBLoginView *loginView = [[FBLoginView alloc] init];
-    loginView.center = self.view.center;
-    [self.view addSubview:loginView];
+    self.activityIndicator.hidden = YES;
+    
+//    FBLoginView *loginView = [[FBLoginView alloc] init];
+//    loginView.center = self.view.center;
+//    [self.view addSubview:loginView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,8 +45,28 @@
 
 #pragma mark - IBAction
 
-- (IBAction)loginButtonPressed:(id)sender {
+- (IBAction)loginButtonPressed:(id)sender
+{
+    self.activityIndicator.hidden = NO;
+    [self.activityIndicator startAnimating];
+    NSArray *permissionsArray = @[@"user_about_me", @"user_interests", @"user_relationships", @"user_birthday", @"user_location", @"user_relationship_details"];
+    [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
+        [self.activityIndicator stopAnimating];
+        self.activityIndicator.hidden = YES;
+        if (!user) {
+            if (!error) {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Log In Error" message:@"The Facebook Login was Canceled" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alertView show];
+            }
+            else {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Log In Error" message:[error description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alertView show];
+            }
+        }
+        else {
+            [self performSegueWithIdentifier:@"loginToTabBarSegue" sender:self];
+        }
+    }];
 }
-
 
 @end
