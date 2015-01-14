@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		117BA6B21A62A68500923A25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BA6B11A62A68500923A25 /* main.m */; };
 		117BA6B51A62A68500923A25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BA6B41A62A68500923A25 /* AppDelegate.m */; };
-		117BA6B81A62A68500923A25 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BA6B71A62A68500923A25 /* FirstViewController.m */; };
-		117BA6BB1A62A68500923A25 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BA6BA1A62A68500923A25 /* SecondViewController.m */; };
 		117BA6BE1A62A68500923A25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117BA6BC1A62A68500923A25 /* Main.storyboard */; };
 		117BA6C01A62A68500923A25 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 117BA6BF1A62A68500923A25 /* Images.xcassets */; };
 		117BA6C31A62A68500923A25 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 117BA6C11A62A68500923A25 /* LaunchScreen.xib */; };
 		117BA6CF1A62A68500923A25 /* MatchedupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BA6CE1A62A68500923A25 /* MatchedupTests.m */; };
 		117BA6DA1A62A77B00923A25 /* XZZLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BA6D91A62A77B00923A25 /* XZZLoginViewController.m */; };
 		117BA6DE1A638B2500923A25 /* XZZConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BA6DD1A638B2500923A25 /* XZZConstants.m */; };
+		11CE88DD1A66462700D895C6 /* faye.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CE88DC1A66462700D895C6 /* faye.png */; };
+		11CE88E11A66482700D895C6 /* XZZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CE88E01A66482700D895C6 /* XZZHomeViewController.m */; };
 		3A999F2228982A4AE175E7F2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEA65C981A5CC0D8EBD7B24 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -36,10 +36,6 @@
 		117BA6B11A62A68500923A25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		117BA6B31A62A68500923A25 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		117BA6B41A62A68500923A25 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		117BA6B61A62A68500923A25 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		117BA6B71A62A68500923A25 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		117BA6B91A62A68500923A25 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		117BA6BA1A62A68500923A25 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		117BA6BD1A62A68500923A25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		117BA6BF1A62A68500923A25 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		117BA6C21A62A68500923A25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -50,6 +46,9 @@
 		117BA6D91A62A77B00923A25 /* XZZLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZZLoginViewController.m; sourceTree = "<group>"; };
 		117BA6DC1A638B2500923A25 /* XZZConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZZConstants.h; sourceTree = "<group>"; };
 		117BA6DD1A638B2500923A25 /* XZZConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZZConstants.m; sourceTree = "<group>"; };
+		11CE88DC1A66462700D895C6 /* faye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faye.png; sourceTree = "<group>"; };
+		11CE88DF1A66482700D895C6 /* XZZHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZZHomeViewController.h; sourceTree = "<group>"; };
+		11CE88E01A66482700D895C6 /* XZZHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZZHomeViewController.m; sourceTree = "<group>"; };
 		5FEA65C981A5CC0D8EBD7B24 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8463E9A5F31DA5AED5C86A3F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E88652461C084C278C0ADDAB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,12 +98,9 @@
 			children = (
 				117BA6B31A62A68500923A25 /* AppDelegate.h */,
 				117BA6B41A62A68500923A25 /* AppDelegate.m */,
-				117BA6B61A62A68500923A25 /* FirstViewController.h */,
-				117BA6B71A62A68500923A25 /* FirstViewController.m */,
-				117BA6B91A62A68500923A25 /* SecondViewController.h */,
-				117BA6BA1A62A68500923A25 /* SecondViewController.m */,
 				117BA6BC1A62A68500923A25 /* Main.storyboard */,
 				117BA6DB1A62A78500923A25 /* Login */,
+				11CE88DE1A6647F300D895C6 /* Home */,
 				117BA6BF1A62A68500923A25 /* Images.xcassets */,
 				117BA6C11A62A68500923A25 /* LaunchScreen.xib */,
 				117BA6AF1A62A68500923A25 /* Supporting Files */,
@@ -117,6 +113,7 @@
 			children = (
 				117BA6DC1A638B2500923A25 /* XZZConstants.h */,
 				117BA6DD1A638B2500923A25 /* XZZConstants.m */,
+				11CE88DC1A66462700D895C6 /* faye.png */,
 				117BA6B01A62A68500923A25 /* Info.plist */,
 				117BA6B11A62A68500923A25 /* main.m */,
 			);
@@ -147,6 +144,15 @@
 				117BA6D91A62A77B00923A25 /* XZZLoginViewController.m */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		11CE88DE1A6647F300D895C6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				11CE88DF1A66482700D895C6 /* XZZHomeViewController.h */,
+				11CE88E01A66482700D895C6 /* XZZHomeViewController.m */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 		19AB67CA0DF8F64B319A1D8A /* Pods */ = {
@@ -248,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11CE88DD1A66462700D895C6 /* faye.png in Resources */,
 				117BA6BE1A62A68500923A25 /* Main.storyboard in Resources */,
 				117BA6C31A62A68500923A25 /* LaunchScreen.xib in Resources */,
 				117BA6C01A62A68500923A25 /* Images.xcassets in Resources */,
@@ -301,10 +308,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				117BA6BB1A62A68500923A25 /* SecondViewController.m in Sources */,
 				117BA6B51A62A68500923A25 /* AppDelegate.m in Sources */,
-				117BA6B81A62A68500923A25 /* FirstViewController.m in Sources */,
 				117BA6B21A62A68500923A25 /* main.m in Sources */,
+				11CE88E11A66482700D895C6 /* XZZHomeViewController.m in Sources */,
 				117BA6DE1A638B2500923A25 /* XZZConstants.m in Sources */,
 				117BA6DA1A62A77B00923A25 /* XZZLoginViewController.m in Sources */,
 			);
