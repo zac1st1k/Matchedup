@@ -19,7 +19,9 @@ extern NSString *const kXZZUserProfileLocationKey;
 extern NSString *const kXZZUserProfileGenderKey;
 extern NSString *const kXZZUserProfileBirthdayKey;
 extern NSString *const kXZZUserProfileInterestedInKey;
-extern NSString *const kXZZUserProfilePictureURL;
+extern NSString *const kXZZUserProfilePictureURLKey;
+extern NSString *const kXZZUserProfileRelationsihpStatusKey;
+extern NSString *const kXZZUserProfileAgeKey;
 
 #pragma mark - Photo Class
 

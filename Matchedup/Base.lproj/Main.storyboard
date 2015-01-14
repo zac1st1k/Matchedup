@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZMG-Af-83o">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JZv-uu-oqn">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -33,31 +33,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Yzd-BD-i43" secondAttribute="centerX" constant="-0.5" id="3bt-Vy-3q1"/>
-                            <constraint firstAttribute="centerY" secondItem="zC1-pG-yKz" secondAttribute="centerY" id="Eg3-wF-c0c"/>
-                            <constraint firstItem="l0v-T9-1Ux" firstAttribute="top" secondItem="Yzd-BD-i43" secondAttribute="bottom" constant="36" id="FEd-21-lun"/>
                             <constraint firstAttribute="centerX" secondItem="Yzd-BD-i43" secondAttribute="centerX" id="fSX-QV-VXu"/>
-                            <constraint firstAttribute="centerX" secondItem="zC1-pG-yKz" secondAttribute="centerX" id="gLV-zh-TIX"/>
                             <constraint firstAttribute="centerX" secondItem="zC1-pG-yKz" secondAttribute="centerX" id="ic2-rN-e3K"/>
                             <constraint firstAttribute="centerY" secondItem="zC1-pG-yKz" secondAttribute="centerY" id="jWS-Lx-f1A"/>
                             <constraint firstItem="l0v-T9-1Ux" firstAttribute="top" secondItem="Yzd-BD-i43" secondAttribute="bottom" constant="20" id="svT-qv-9Mf"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Eg3-wF-c0c"/>
-                                <exclude reference="gLV-zh-TIX"/>
-                                <exclude reference="3bt-Vy-3q1"/>
-                                <exclude reference="FEd-21-lun"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="constraints">
-                                <include reference="Eg3-wF-c0c"/>
-                                <include reference="gLV-zh-TIX"/>
-                                <include reference="3bt-Vy-3q1"/>
-                                <include reference="FEd-21-lun"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="vvm-7o-6iZ"/>
                     <connections>
@@ -170,7 +150,6 @@
                     <connections>
                         <outlet property="ageLabel" destination="6Cs-P5-xk8" id="ka9-Pj-gfm"/>
                         <outlet property="chatBarButtonItem" destination="Wsm-9p-zeo" id="9Ba-Ls-zn2"/>
-                        <outlet property="chatBarButtonItemPressed" destination="2JP-Bj-7RN" id="Vov-1f-mQW"/>
                         <outlet property="dislikeButton" destination="sWT-bq-zHj" id="s2L-Oe-sdF"/>
                         <outlet property="firstNameLabel" destination="XmY-v8-Y6w" id="b6M-bT-ONu"/>
                         <outlet property="infoButton" destination="dMv-nW-48X" id="vZj-ma-5SK"/>
@@ -207,7 +186,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Melbourne, Australia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVV-Id-n1u">
-                                <rect key="frame" x="405.5" y="284" width="158.5" height="20.5"/>
+                                <rect key="frame" x="405" y="284" width="158.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -219,7 +198,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJC-ge-zJ8">
-                                <rect key="frame" x="544.5" y="324" width="19.5" height="20.5"/>
+                                <rect key="frame" x="544" y="324" width="19.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -231,13 +210,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In a relationship" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAU-xK-GZF">
-                                <rect key="frame" x="442.5" y="359" width="121.5" height="20.5"/>
+                                <rect key="frame" x="442" y="359" width="121.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tq-Ur-ZTe">
-                                <rect key="frame" x="36" y="446" width="42" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tq-Ur-ZTe">
+                                <rect key="frame" x="36" y="446" width="540" height="150"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
