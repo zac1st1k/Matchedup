@@ -61,22 +61,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="faye.png" translatesAutoresizingMaskIntoConstraints="NO" id="fSo-Rl-snh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fSo-Rl-snh">
                                 <rect key="frame" x="210" y="210" width="180" height="180"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="firstName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XmY-v8-Y6w">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="firstName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XmY-v8-Y6w">
                                 <rect key="frame" x="263" y="410" width="74" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Cs-P5-xk8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Cs-P5-xk8">
                                 <rect key="frame" x="286" y="450" width="28.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tagLine" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fsp-EB-k5D">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="tagLine" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fsp-EB-k5D">
                                 <rect key="frame" x="271.5" y="491" width="57" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -115,6 +115,9 @@
                                     <action selector="dislikeButtonPressed:" destination="ZMG-Af-83o" eventType="touchUpInside" id="4Vp-VO-mCp"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="anK-hl-Rwe">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -127,7 +130,9 @@
                             <constraint firstItem="2BP-an-V8P" firstAttribute="leading" secondItem="Ac4-YJ-VDW" secondAttribute="leadingMargin" constant="20" id="UU5-z4-vpR"/>
                             <constraint firstItem="dMv-nW-48X" firstAttribute="centerY" secondItem="2BP-an-V8P" secondAttribute="centerY" id="WFf-Mh-Fol"/>
                             <constraint firstAttribute="centerX" secondItem="6Cs-P5-xk8" secondAttribute="centerX" id="bRw-QY-Zl3"/>
+                            <constraint firstAttribute="centerX" secondItem="anK-hl-Rwe" secondAttribute="centerX" id="fEk-M1-NqU"/>
                             <constraint firstAttribute="centerY" secondItem="fSo-Rl-snh" secondAttribute="centerY" id="gAg-bC-mrm"/>
+                            <constraint firstAttribute="centerY" secondItem="anK-hl-Rwe" secondAttribute="centerY" id="itI-LJ-sxT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sWT-bq-zHj" secondAttribute="trailing" constant="20" id="j5T-ik-ats"/>
                             <constraint firstItem="Fsp-EB-k5D" firstAttribute="top" secondItem="6Cs-P5-xk8" secondAttribute="bottom" constant="20" id="jvl-fg-eRp"/>
                             <constraint firstAttribute="centerX" secondItem="fSo-Rl-snh" secondAttribute="centerX" id="ohW-tU-vLe"/>
@@ -148,6 +153,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="anK-hl-Rwe" id="fhz-d3-M4m"/>
                         <outlet property="ageLabel" destination="6Cs-P5-xk8" id="ka9-Pj-gfm"/>
                         <outlet property="chatBarButtonItem" destination="Wsm-9p-zeo" id="9Ba-Ls-zn2"/>
                         <outlet property="dislikeButton" destination="sWT-bq-zHj" id="s2L-Oe-sdF"/>
@@ -269,7 +275,6 @@
         <!--Settings View Controller-->
         <scene sceneID="A2l-gw-XvW">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hWB-KQ-nFp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="tHF-r1-izy" customClass="XZZSettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wn0-YZ-1Id"/>
@@ -398,6 +403,7 @@
                         <outlet property="womenSwitch" destination="rKu-Dz-FI4" id="24a-LJ-EJ2"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hWB-KQ-nFp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1626" y="-266"/>
         </scene>
@@ -416,7 +422,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffa-uI-EfL">
                                 <rect key="frame" x="0.0" y="124.5" width="600" height="120"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                             </textView>
