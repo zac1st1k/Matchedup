@@ -8,6 +8,7 @@
 
 #import "XZZHomeViewController.h"
 #import <Parse/Parse.h>
+#import "XZZConstants.h"
 
 @interface XZZHomeViewController ()
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *chatBarButtonItem;
@@ -47,8 +48,8 @@
     self.dislikeButton.enabled = NO;
     self.infoButton.enabled = NO;
     self.currentPhotoIndex = 0;
-    PFQuery *query = [PFQuery queryWithClassName:@"Photo"];
-    [query includeKey:@"user"];
+    PFQuery *query = [PFQuery queryWithClassName:kXZZPhotoClassKey];
+    [query includeKey:kXZZPhotoUserKey];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             self.photos = objects;
@@ -101,7 +102,7 @@
 {
     if ([self.photos count] > 0) {
         self.photo = self.photos[self.currentPhotoIndex];
-        PFFile *file = self.photo[@"image"];
+        PFFile *file = self.photo[kXZZPhotoPictureKey];
         [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             if (!error) {
                 UIImage *image = [UIImage imageWithData:data];
@@ -110,14 +111,14 @@
             }
             else NSLog(@"%@", error);
         }];
-        PFQuery *queryForLike = [PFQuery queryWithClassName:@"Activity"];
-        [queryForLike whereKey:@"type" equalTo:@"like"];
-        [queryForLike whereKey:@"photo" equalTo:self.photo];
-        [queryForLike whereKey:@"fromUser" equalTo:[PFUser currentUser]];
-        PFQuery *queryForDislike = [PFQuery queryWithClassName:@"Activity"];
-        [queryForDislike whereKey:@"type" equalTo:@"dislike"];
-        [queryForDislike whereKey:@"photo" equalTo:self.photo];
-        [queryForDislike whereKey:@"fromUser" equalTo:[PFUser currentUser]];
+        PFQuery *queryForLike = [PFQuery queryWithClassName:KXZZActivityClassKey];
+        [queryForLike whereKey:KXZZActivityTypeKey equalTo:KXZZActivityTypeLikeKey];
+        [queryForLike whereKey:KXZZActivityPhotoKey equalTo:self.photo];
+        [queryForLike whereKey:KXZZActivityFromUserKey equalTo:[PFUser currentUser]];
+        PFQuery *queryForDislike = [PFQuery queryWithClassName:KXZZActivityClassKey];
+        [queryForDislike whereKey:KXZZActivityTypeKey equalTo:KXZZActivityTypeDislikeKey];
+        [queryForDislike whereKey:KXZZActivityPhotoKey equalTo:self.photo];
+        [queryForDislike whereKey:KXZZActivityFromUserKey equalTo:[PFUser currentUser]];
         PFQuery *likeAndDislikeQuery = [PFQuery orQueryWithSubqueries:@[queryForLike, queryForDislike]];
         [likeAndDislikeQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error){
@@ -128,11 +129,11 @@
                 }
                 else {
                     PFObject *activity = self.activities[0];
-                    if ([activity[@"type"] isEqualToString:@"like"]) {
+                    if ([activity[KXZZActivityTypeKey] isEqualToString:KXZZActivityTypeLikeKey]) {
                         self.isLikedByCurrentUser = YES;
                         self.isDislikedByCurrentUser = NO;
                     }
-                    else if ([activity[@"type"] isEqualToString:@"dislike"]){
+                    else if ([activity[KXZZActivityTypeKey] isEqualToString:KXZZActivityTypeDislikeKey]){
                         self.isLikedByCurrentUser = NO;
                         self.isDislikedByCurrentUser = YES;
                     }
@@ -152,9 +153,9 @@
     NSLog(@"photos are %@", self.photo);
     NSLog(@"photos are %@", self.photo[@"user"]);
     NSLog(@"photos are %@", self.photo[@"user"][@"profile"]);
-    self.firstNameLabel.text = self.photo[@"user"][@"profile"][@"firstName"];
-    self.ageLabel.text = [NSString stringWithFormat:@"%@", self.photo[@"user"][@"profile"][@"age"]];
-    self.tagLineLabel.text = self.photo[@"user"][@"tagLine"];
+    self.firstNameLabel.text = self.photo[kXZZPhotoUserKey][kXZZUserProfileKey][kXZZUserProfileFirstNameKey];
+    self.ageLabel.text = [NSString stringWithFormat:@"%@", self.photo[kXZZPhotoUserKey][kXZZUserProfileKey][kXZZUserProfileAgeKey]];
+    self.tagLineLabel.text = self.photo[kXZZPhotoUserKey][kXZZUserTagLineKey];
 }
 
 - (void)setupNextPhoto
@@ -171,11 +172,11 @@
 
 - (void)saveLike
 {
-    PFObject *likeActivity = [PFObject objectWithClassName:@"Activity"];
-    [likeActivity setObject:@"like" forKey:@"type"];
-    [likeActivity setObject:[PFUser currentUser] forKey:@"fromUser"];
-    [likeActivity setObject:[self.photo objectForKey:@"user"] forKey:@"toUser"];
-    [likeActivity setObject:self.photo forKey:@"photo"];
+    PFObject *likeActivity = [PFObject objectWithClassName:KXZZActivityClassKey];
+    [likeActivity setObject:KXZZActivityTypeLikeKey forKey:KXZZActivityTypeKey];
+    [likeActivity setObject:[PFUser currentUser] forKey:KXZZActivityFromUserKey];
+    [likeActivity setObject:[self.photo objectForKey:kXZZPhotoUserKey] forKey:KXZZActivityToUserKey];
+    [likeActivity setObject:self.photo forKey:KXZZActivityPhotoKey];
     [likeActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         self.isLikedByCurrentUser = YES;
         self.isDislikedByCurrentUser = NO;
@@ -186,11 +187,11 @@
 
 - (void)saveDislike
 {
-    PFObject *dislikeActivity = [PFObject objectWithClassName:@"Activity"];
-    [dislikeActivity setObject:@"dislike" forKey:@"type"];
-    [dislikeActivity setObject:[PFUser currentUser] forKey:@"fromUser"];
-    [dislikeActivity setObject:[self.photo objectForKey:@"user"] forKey:@"toUser"];
-    [dislikeActivity setObject:self.photo forKey:@"photo"];
+    PFObject *dislikeActivity = [PFObject objectWithClassName:KXZZActivityClassKey];
+    [dislikeActivity setObject:KXZZActivityTypeDislikeKey forKey:KXZZActivityTypeKey];
+    [dislikeActivity setObject:[PFUser currentUser] forKey:KXZZActivityFromUserKey];
+    [dislikeActivity setObject:[self.photo objectForKey:kXZZPhotoUserKey] forKey:KXZZActivityToUserKey];
+    [dislikeActivity setObject:self.photo forKey:KXZZActivityPhotoKey];
     [dislikeActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         self.isLikedByCurrentUser = NO;
         self.isDislikedByCurrentUser = YES;

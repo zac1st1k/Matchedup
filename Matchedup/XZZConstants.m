@@ -12,6 +12,8 @@
 
 #pragma mark - User Profile
 
+NSString *const kXZZUserTagLineKey = @"tagLine";
+
 NSString *const kXZZUserProfileKey = @"profile";
 NSString *const kXZZUserProfileNameKey = @"name";
 NSString *const kXZZUserProfileFirstNameKey = @"firstName";
@@ -29,5 +31,15 @@ NSString *const kXZZUserProfileAgeKey = @"age";
 NSString *const kXZZPhotoClassKey = @"Photo";
 NSString *const kXZZPhotoUserKey = @"user";
 NSString *const kXZZPhotoPictureKey = @"image";
+
+#pragma mark - Activity Class
+
+NSString *const KXZZActivityClassKey = @"Activity";
+NSString *const KXZZActivityTypeKey = @"type";
+NSString *const KXZZActivityFromUserKey = @"fromUser";
+NSString *const KXZZActivityToUserKey = @"toUser";
+NSString *const KXZZActivityPhotoKey = @"photo";
+NSString *const KXZZActivityTypeLikeKey = @"like";
+NSString *const KXZZActivityTypeDislikeKey = @"dislike";
 
 @end
