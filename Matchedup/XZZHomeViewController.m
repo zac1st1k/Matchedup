@@ -49,7 +49,6 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             self.photos = objects;
-            NSLog(@"photos are %@", self.photos);
             [self queryForCurrentPhotoIndex];
             self.activityIndicator.hidden = YES;
         }
@@ -102,9 +101,21 @@
             if (!error) {
                 UIImage *image = [UIImage imageWithData:data];
                 self.photoImageView.image = image;
+                [self updateView];
             }
             else NSLog(@"%@", error);
         }];
     }
 }
+
+-(void)updateView
+{
+    NSLog(@"photos are %@", self.photo);
+    NSLog(@"photos are %@", self.photo[@"user"]);
+    NSLog(@"photos are %@", self.photo[@"user"][@"profile"]);
+    self.firstNameLabel.text = self.photo[@"user"][@"profile"][@"firstName"];
+    self.ageLabel.text = [NSString stringWithFormat:@"%@", self.photo[@"user"][@"profile"][@"age"]];
+    self.tagLineLabel.text = self.photo[@"user"][@"tagLine"];
+}
+
 @end

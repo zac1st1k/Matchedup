@@ -14,7 +14,7 @@
 
 NSString *const kXZZUserProfileKey = @"profile";
 NSString *const kXZZUserProfileNameKey = @"name";
-NSString *const kXZZUserProfileFirstNameKey = @"firstNameKey";
+NSString *const kXZZUserProfileFirstNameKey = @"firstName";
 NSString *const kXZZUserProfileLocationKey = @"location";
 NSString *const kXZZUserProfileGenderKey = @"gender";
 NSString *const kXZZUserProfileBirthdayKey = @"birthday";

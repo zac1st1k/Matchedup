@@ -113,9 +113,14 @@
                 NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
                 [formatter setDateStyle:NSDateFormatterShortStyle];
                 NSDate *date = [formatter dateFromString:userDictionary[@"birthday"]];
+                NSLog(@"%@", date);
                 NSDate *now = [NSDate date];
+
+                NSLog(@"%@", now);
                 NSTimeInterval seconds = [now timeIntervalSinceDate:date];
-                int age = seconds / 315360000;
+                NSLog(@"%f", seconds);
+                int age = seconds / 31536000;
+                NSLog(@"%d",age);
                 userProfile[kXZZUserProfileAgeKey] = @(age);
             }
             if (userDictionary[@"interested_in"]) {
