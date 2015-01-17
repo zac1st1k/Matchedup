@@ -8,6 +8,7 @@
 
 #import "XZZSettingsViewController.h"
 #import "XZZConstants.h"
+#import <Parse/Parse.h>
 
 @interface XZZSettingsViewController ()
 
@@ -58,7 +59,8 @@
 
 - (IBAction)logoutButtonPressed:(UIButton *)sender
 {
-    
+    [PFUser logOut];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (IBAction)editProfileButtonPressed:(UIButton *)sender
