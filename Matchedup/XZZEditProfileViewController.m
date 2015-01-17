@@ -7,6 +7,8 @@
 //
 
 #import "XZZEditProfileViewController.h"
+#import "XZZConstants.h"
+#import <Parse/Parse.h>
 
 @interface XZZEditProfileViewController ()
 
@@ -21,6 +23,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    PFQuery *query = [PFQuery queryWithClassName:kXZZPhotoClassKey];
+    [query whereKey:kXZZPhotoUserKey equalTo:[PFUser currentUser]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if ([objects count] > 0) {
+            PFObject *photo = objects[0];
+            PFFile *pictureFile = photo[kXZZPhotoPictureKey];
+            [pictureFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                if (!error) {
+                    self.profilePictureImageView.image = [UIImage imageWithData:data];
+                }
+            }];
+            self.tagLineTextView.text = [[PFUser currentUser] objectForKey:kXZZUserTagLineKey];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,7 +48,9 @@
 
 - (IBAction)saveBarButtonItemPressed:(UIBarButtonItem *)sender
 {
-    
+    [[PFUser currentUser] setObject:self.tagLineTextView.text forKey:kXZZUserTagLineKey];
+    [[PFUser currentUser] saveInBackground];
+    [self.navigationController popViewControllerAnimated:YES];    
 }
 
 

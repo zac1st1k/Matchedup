@@ -46,7 +46,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //    [XZZTestUser saveTestUserToParse];
-    
     [self.activityIndicator startAnimating];
     self.likeButton.enabled = NO;
     self.dislikeButton.enabled = NO;
