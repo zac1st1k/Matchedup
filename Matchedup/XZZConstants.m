@@ -42,4 +42,11 @@ NSString *const KXZZActivityPhotoKey = @"photo";
 NSString *const KXZZActivityTypeLikeKey = @"like";
 NSString *const KXZZActivityTypeDislikeKey = @"dislike";
 
+#pragma mark - Settings
+
+NSString *const kXZZMenEnabledKey = @"men";
+NSString *const kXZZWomenEnabledKey = @"women";
+NSString *const kXZZSingleEnabledKey = @"single";
+NSString *const kXZZAgeMaxKey = @"ageMax";
+
 @end

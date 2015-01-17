@@ -395,6 +395,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="OJv-ny-2PG"/>
                     <connections>
+                        <outlet property="ageLabel" destination="med-ir-rbo" id="eBG-ta-LMT"/>
                         <outlet property="ageSlider" destination="cua-yd-875" id="e5b-Yu-etv"/>
                         <outlet property="editProfileBotton" destination="2UE-pN-adc" id="3Ui-3p-0dm"/>
                         <outlet property="logoutButton" destination="3NN-lh-T1P" id="cj9-3K-9nd"/>

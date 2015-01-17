@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "XZZConstants.h"
 #import "XZZTestUser.h"
+#import "XZZProfileViewController.h"
 
 @interface XZZHomeViewController ()
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *chatBarButtonItem;
@@ -44,7 +45,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    [XZZTestUser saveTestUserToParse];
+    //    [XZZTestUser saveTestUserToParse];
     
     [self.activityIndicator startAnimating];
     self.likeButton.enabled = NO;
@@ -71,15 +72,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"homeToProfileSegue"]) {
+        XZZProfileViewController *nextViewController = segue.destinationViewController;
+        nextViewController.photo = self.photo;
+    }
+}
 
 #pragma mark - IBActions
 
@@ -94,6 +97,7 @@
 }
 
 - (IBAction)infoButtonPressed:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"homeToProfileSegue" sender:nil];
 }
 
 - (IBAction)dislikeButtonPressed:(UIButton *)sender {
@@ -147,6 +151,7 @@
                 }
                 self.likeButton.enabled = YES;
                 self.dislikeButton.enabled = YES;
+                self.infoButton.enabled = YES;
             }
         }];
     }

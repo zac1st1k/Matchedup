@@ -7,6 +7,8 @@
 //
 
 #import "XZZProfileViewController.h"
+#import "XZZConstants.h"
+#import <Parse/Parse.h>
 
 @interface XZZProfileViewController ()
 
@@ -23,6 +25,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    PFFile *pictureFile = self.photo[kXZZPhotoPictureKey];
+    [pictureFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        self.profilePictureImageView.image = [UIImage imageWithData:data];
+    }];
+    PFUser *user = self.photo[kXZZPhotoUserKey];
+    self.locationLabel.text = user[kXZZUserProfileKey][kXZZUserProfileLocationKey];
+    self.ageLabel.text = [NSString stringWithFormat:@"%@", user[kXZZUserProfileKey][kXZZUserProfileAgeKey]];
+    self.statusLabel.text = user[kXZZUserProfileKey][kXZZUserProfileRelationsihpStatusKey];
+    self.tagLineLabel.text = user[kXZZUserTagLineKey];
 }
 
 - (void)didReceiveMemoryWarning {

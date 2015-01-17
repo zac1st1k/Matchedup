@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface XZZProfileViewController : UIViewController
+
+@property (strong, nonatomic) PFObject *photo;
 
 @end
