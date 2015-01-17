@@ -10,4 +10,6 @@
 
 @interface XZZMatchViewController : UIViewController
 
+@property (strong, nonatomic) UIImage *matchedUserImage;
+
 @end

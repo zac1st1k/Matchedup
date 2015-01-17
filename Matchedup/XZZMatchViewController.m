@@ -7,6 +7,8 @@
 //
 
 #import "XZZMatchViewController.h"
+#import <Parse/Parse.h>
+#import "XZZConstants.h"
 
 @interface XZZMatchViewController ()
 
@@ -22,6 +24,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    PFQuery *query = [PFQuery queryWithClassName:kXZZPhotoClassKey];
+    [query whereKey:kXZZPhotoUserKey equalTo:[PFUser currentUser]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if ([objects count] > 0) {
+            PFObject *photo = objects[0];
+            PFFile *pictureFile = photo[kXZZPhotoPictureKey];
+            [pictureFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                self.currentUserImageView.image = [UIImage imageWithData:data];
+                self.matchedUserImageView.image = self.matchedUserImage;
+            }];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,7 +60,7 @@
 }
 
 - (IBAction)keepSearchingButtonPressed:(UIButton *)sender {
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

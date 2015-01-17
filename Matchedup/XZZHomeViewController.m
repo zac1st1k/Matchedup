@@ -11,6 +11,7 @@
 #import "XZZConstants.h"
 #import "XZZTestUser.h"
 #import "XZZProfileViewController.h"
+#import "XZZMatchViewController.h"
 
 @interface XZZHomeViewController ()
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *chatBarButtonItem;
@@ -80,6 +81,11 @@
     if ([segue.identifier isEqualToString:@"homeToProfileSegue"]) {
         XZZProfileViewController *nextViewController = segue.destinationViewController;
         nextViewController.photo = self.photo;
+    }
+    else if ([segue.identifier isEqualToString:@"homeToMatchSegue"])
+    {
+        XZZMatchViewController *matchViewController = segue.destinationViewController;
+        matchViewController.matchedUserImage = self.photoImageView.image;
     }
 }
 
