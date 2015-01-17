@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110756221A6A28EC00B274DA /* XZZTestUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 110756211A6A28EC00B274DA /* XZZTestUser.m */; };
 		117BA6B21A62A68500923A25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BA6B11A62A68500923A25 /* main.m */; };
 		117BA6B51A62A68500923A25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BA6B41A62A68500923A25 /* AppDelegate.m */; };
 		117BA6BE1A62A68500923A25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117BA6BC1A62A68500923A25 /* Main.storyboard */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		110756201A6A28EC00B274DA /* XZZTestUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZZTestUser.h; sourceTree = "<group>"; };
+		110756211A6A28EC00B274DA /* XZZTestUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZZTestUser.m; sourceTree = "<group>"; };
 		117BA6AC1A62A68500923A25 /* Matchedup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchedup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		117BA6B01A62A68500923A25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		117BA6B11A62A68500923A25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -82,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1107561F1A6A28AF00B274DA /* CreateParseUser */ = {
+			isa = PBXGroup;
+			children = (
+				110756201A6A28EC00B274DA /* XZZTestUser.h */,
+				110756211A6A28EC00B274DA /* XZZTestUser.m */,
+			);
+			name = CreateParseUser;
+			sourceTree = "<group>";
+		};
 		117BA6A31A62A68500923A25 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +125,7 @@
 				11CE88E21A664DE000D895C6 /* Settings */,
 				11CE88E61A6697D400D895C6 /* EditProfile */,
 				11CE88EA1A669ACA00D895C6 /* Profile */,
+				1107561F1A6A28AF00B274DA /* CreateParseUser */,
 				117BA6BF1A62A68500923A25 /* Images.xcassets */,
 				117BA6C11A62A68500923A25 /* LaunchScreen.xib */,
 				117BA6AF1A62A68500923A25 /* Supporting Files */,
@@ -352,6 +365,7 @@
 				117BA6B21A62A68500923A25 /* main.m in Sources */,
 				11CE88E91A66981200D895C6 /* XZZEditProfileViewController.m in Sources */,
 				11CE88E51A664E4B00D895C6 /* XZZSettingsViewController.m in Sources */,
+				110756221A6A28EC00B274DA /* XZZTestUser.m in Sources */,
 				11CE88E11A66482700D895C6 /* XZZHomeViewController.m in Sources */,
 				117BA6DE1A638B2500923A25 /* XZZConstants.m in Sources */,
 				117BA6DA1A62A77B00923A25 /* XZZLoginViewController.m in Sources */,

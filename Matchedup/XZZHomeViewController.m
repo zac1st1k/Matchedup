@@ -9,6 +9,7 @@
 #import "XZZHomeViewController.h"
 #import <Parse/Parse.h>
 #import "XZZConstants.h"
+#import "XZZTestUser.h"
 
 @interface XZZHomeViewController ()
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *chatBarButtonItem;
@@ -43,12 +44,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+//    [XZZTestUser saveTestUserToParse];
+    
     [self.activityIndicator startAnimating];
     self.likeButton.enabled = NO;
     self.dislikeButton.enabled = NO;
     self.infoButton.enabled = NO;
     self.currentPhotoIndex = 0;
     PFQuery *query = [PFQuery queryWithClassName:kXZZPhotoClassKey];
+    [query whereKey:kXZZPhotoUserKey notEqualTo:[PFUser currentUser]];
     [query includeKey:kXZZPhotoUserKey];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
