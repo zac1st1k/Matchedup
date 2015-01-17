@@ -13,7 +13,8 @@
 #import "XZZProfileViewController.h"
 #import "XZZMatchViewController.h"
 
-@interface XZZHomeViewController ()
+@interface XZZHomeViewController () <XZZMatchViewControllerDelegate>
+
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *chatBarButtonItem;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *settingsBarButtonItem;
 @property (strong, nonatomic) IBOutlet UIImageView *photoImageView;
@@ -86,6 +87,7 @@
     {
         XZZMatchViewController *matchViewController = segue.destinationViewController;
         matchViewController.matchedUserImage = self.photoImageView.image;
+        matchViewController.delegate = self;
     }
 }
 
@@ -285,6 +287,15 @@
                 [self performSegueWithIdentifier:@"homeToMatchSegue" sender:nil];
             }];
         }
+    }];
+}
+
+#pragma mark - XZZMatchViewController Delegate
+
+- (void)presentMatchedsViewController
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self performSegueWithIdentifier:@"homeToMatchesSegue" sender:nil];
     }];
 }
 

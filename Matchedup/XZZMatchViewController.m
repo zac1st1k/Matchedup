@@ -56,6 +56,7 @@
 # pragma mark - IBActions
 
 - (IBAction)viewChatButtonPressed:(UIButton *)sender {
+    [self.delegate presentMatchedsViewController];
     
 }
 

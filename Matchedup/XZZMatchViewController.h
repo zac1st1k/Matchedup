@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol XZZMatchViewControllerDelegate <NSObject>
+
+- (void)presentMatchedsViewController;
+
+@end
+
 @interface XZZMatchViewController : UIViewController
 
 @property (strong, nonatomic) UIImage *matchedUserImage;
+@property (weak) id <XZZMatchViewControllerDelegate> delegate;
 
 @end
