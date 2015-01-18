@@ -2,12 +2,12 @@
 //  XZZChatViewController.h
 //  Matchedup
 //
-//  Created by Zac on 17/01/2015.
+//  Created by Zac on 18/01/2015.
 //  Copyright (c) 2015 1st1k. All rights reserved.
 //
 
-#import "JSQMessagesViewController.h"
+#import "JSMessagesViewController.h"
 
-@interface XZZChatViewController : JSQMessagesViewController <JSMessagesViewDataSource, JSMessagesViewDelegate>
+@interface XZZChatViewController : JSMessagesViewController <JSMessagesViewDataSource, JSMessagesViewDelegate>
 
 @end

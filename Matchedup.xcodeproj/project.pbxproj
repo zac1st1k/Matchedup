@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		110756221A6A28EC00B274DA /* XZZTestUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 110756211A6A28EC00B274DA /* XZZTestUser.m */; };
+		117B8FB01A6BE57E00552504 /* XZZChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 117B8FAF1A6BE57E00552504 /* XZZChatViewController.m */; };
 		117BA6B21A62A68500923A25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BA6B11A62A68500923A25 /* main.m */; };
 		117BA6B51A62A68500923A25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BA6B41A62A68500923A25 /* AppDelegate.m */; };
 		117BA6BE1A62A68500923A25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117BA6BC1A62A68500923A25 /* Main.storyboard */; };
@@ -18,7 +19,6 @@
 		117BA6DE1A638B2500923A25 /* XZZConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BA6DD1A638B2500923A25 /* XZZConstants.m */; };
 		118B325A1A6A59120039EB29 /* XZZMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 118B32591A6A59120039EB29 /* XZZMatchViewController.m */; };
 		118B325E1A6A5CBE0039EB29 /* XZZMatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 118B325D1A6A5CBE0039EB29 /* XZZMatchesViewController.m */; };
-		118B32651A6A896C0039EB29 /* XZZChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 118B32641A6A896C0039EB29 /* XZZChatViewController.m */; };
 		11CE88DD1A66462700D895C6 /* faye.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CE88DC1A66462700D895C6 /* faye.png */; };
 		11CE88E11A66482700D895C6 /* XZZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CE88E01A66482700D895C6 /* XZZHomeViewController.m */; };
 		11CE88E51A664E4B00D895C6 /* XZZSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CE88E41A664E4B00D895C6 /* XZZSettingsViewController.m */; };
@@ -40,6 +40,8 @@
 /* Begin PBXFileReference section */
 		110756201A6A28EC00B274DA /* XZZTestUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZZTestUser.h; sourceTree = "<group>"; };
 		110756211A6A28EC00B274DA /* XZZTestUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZZTestUser.m; sourceTree = "<group>"; };
+		117B8FAE1A6BE57E00552504 /* XZZChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZZChatViewController.h; sourceTree = "<group>"; };
+		117B8FAF1A6BE57E00552504 /* XZZChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZZChatViewController.m; sourceTree = "<group>"; };
 		117BA6AC1A62A68500923A25 /* Matchedup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchedup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		117BA6B01A62A68500923A25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		117BA6B11A62A68500923A25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -59,8 +61,6 @@
 		118B32591A6A59120039EB29 /* XZZMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZZMatchViewController.m; sourceTree = "<group>"; };
 		118B325C1A6A5CBE0039EB29 /* XZZMatchesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZZMatchesViewController.h; sourceTree = "<group>"; };
 		118B325D1A6A5CBE0039EB29 /* XZZMatchesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZZMatchesViewController.m; sourceTree = "<group>"; };
-		118B32631A6A896C0039EB29 /* XZZChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZZChatViewController.h; sourceTree = "<group>"; };
-		118B32641A6A896C0039EB29 /* XZZChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZZChatViewController.m; sourceTree = "<group>"; };
 		11CE88DC1A66462700D895C6 /* faye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faye.png; sourceTree = "<group>"; };
 		11CE88DF1A66482700D895C6 /* XZZHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZZHomeViewController.h; sourceTree = "<group>"; };
 		11CE88E01A66482700D895C6 /* XZZHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZZHomeViewController.m; sourceTree = "<group>"; };
@@ -204,8 +204,8 @@
 		118B325F1A6A5D3F0039EB29 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				118B32631A6A896C0039EB29 /* XZZChatViewController.h */,
-				118B32641A6A896C0039EB29 /* XZZChatViewController.m */,
+				117B8FAE1A6BE57E00552504 /* XZZChatViewController.h */,
+				117B8FAF1A6BE57E00552504 /* XZZChatViewController.m */,
 			);
 			name = Chat;
 			sourceTree = "<group>";
@@ -400,7 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				117BA6B51A62A68500923A25 /* AppDelegate.m in Sources */,
-				118B32651A6A896C0039EB29 /* XZZChatViewController.m in Sources */,
+				117B8FB01A6BE57E00552504 /* XZZChatViewController.m in Sources */,
 				11CE88ED1A669AE300D895C6 /* XZZProfileViewController.m in Sources */,
 				117BA6B21A62A68500923A25 /* main.m in Sources */,
 				11CE88E91A66981200D895C6 /* XZZEditProfileViewController.m in Sources */,
