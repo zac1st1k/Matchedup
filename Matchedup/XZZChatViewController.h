@@ -8,6 +8,6 @@
 
 #import "JSQMessagesViewController.h"
 
-@interface XZZChatViewController : JSQMessagesViewController
+@interface XZZChatViewController : JSQMessagesViewController <JSMessagesViewDataSource, JSMessagesViewDelegate>
 
 @end
