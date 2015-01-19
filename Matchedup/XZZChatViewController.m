@@ -89,7 +89,19 @@
             [self.tableView reloadData];
             [self finishSend];
             [self scrollToBottomAnimated:YES];
-        }];          
+        }];
+    }
+}
+
+- (JSBubbleMessageType)messageTypeForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PFObject *chat = self.chats[indexPath.row];
+    PFUser *testFromUser = chat[@"fromUser"];
+    if ([testFromUser.objectId isEqual:self.currentUser.objectId]) {
+        return JSBubbleMessageTypeOutgoing;
+    }
+    else {
+        return JSBubbleMessageTypeIncoming;
     }
 }
 
