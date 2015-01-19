@@ -118,4 +118,24 @@
     }
 }
 
+- (JSMessagesViewTimestampPolicy)timestampPolicy
+{
+    return JSMessagesViewTimestampPolicyAll;
+}
+
+- (JSMessagesViewAvatarPolicy)avatarPolicy
+{
+    return JSMessagesViewAvatarPolicyNone;
+}
+
+- (JSMessagesViewSubtitlePolicy)subtitlePolicy
+{
+    return JSMessagesViewSubtitlePolicyNone;
+}
+
+- (JSMessageInputViewStyle)inputViewStyle
+{
+    return JSMessageInputViewStyleFlat;
+}
+
 @end
