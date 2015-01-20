@@ -20,11 +20,12 @@
 @property (strong, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (strong, nonatomic) IBOutlet UILabel *firstNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *ageLabel;
-@property (strong, nonatomic) IBOutlet UILabel *tagLineLabel;
 @property (strong, nonatomic) IBOutlet UIButton *likeButton;
 @property (strong, nonatomic) IBOutlet UIButton *infoButton;
 @property (strong, nonatomic) IBOutlet UIButton *dislikeButton;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (strong, nonatomic) IBOutlet UIView *labelContainerView;
+@property (strong, nonatomic) IBOutlet UIView *buttonContainerView;
 
 
 - (IBAction)chatBarButtonItemPressed:(UIBarButtonItem *)sender;
@@ -51,7 +52,7 @@
     self.photoImageView.image = nil;
     self.firstNameLabel.text = nil;
     self.ageLabel.text = nil;
-    self.tagLineLabel.text = nil;
+    [self setupViews];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -59,7 +60,6 @@
     self.photoImageView.image = nil;
     self.firstNameLabel.text = nil;
     self.ageLabel.text = nil;
-    self.tagLineLabel.text = nil;
     [self.activityIndicator startAnimating];
     self.likeButton.enabled = NO;
     self.dislikeButton.enabled = NO;
@@ -85,6 +85,22 @@
         }
     }];
     
+}
+
+- (void)setupViews
+{
+    [self addShadowForView:self.buttonContainerView];
+    [self addShadowForView:self.labelContainerView];
+    self.photoImageView.layer.masksToBounds = YES;
+}
+
+- (void)addShadowForView:(UIView *)view
+{
+    view.layer.masksToBounds = NO;
+    view.layer.cornerRadius = 4;
+    view.layer.shadowRadius = 1;
+    view.layer.shadowOffset = CGSizeMake(0, 1);
+    view.layer.shadowOpacity = 0.25;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -191,7 +207,6 @@
     NSLog(@"photos are %@", self.photo[@"user"][@"profile"]);
     self.firstNameLabel.text = self.photo[kXZZPhotoUserKey][kXZZUserProfileKey][kXZZUserProfileFirstNameKey];
     self.ageLabel.text = [NSString stringWithFormat:@"%@", self.photo[kXZZPhotoUserKey][kXZZUserProfileKey][kXZZUserProfileAgeKey]];
-    self.tagLineLabel.text = self.photo[kXZZPhotoUserKey][kXZZUserTagLineKey];
 }
 
 - (void)setupNextPhoto
