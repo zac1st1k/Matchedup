@@ -10,7 +10,7 @@
 
 @protocol XZZMatchViewControllerDelegate <NSObject>
 
-- (void)presentMatchedsViewController;
+- (void)presentMatchesViewController;
 
 @end
 

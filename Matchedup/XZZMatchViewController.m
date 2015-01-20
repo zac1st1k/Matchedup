@@ -36,6 +36,11 @@
             }];
         }
     }];
+    self.currentUserImageView.bounds = CGRectMake(0, 0, 180, 180);
+    self.currentUserImageView.contentMode = UIViewContentModeScaleToFill;
+    self.matchedUserImageView.contentMode = UIViewContentModeScaleAspectFill;
+   
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,7 +61,7 @@
 # pragma mark - IBActions
 
 - (IBAction)viewChatButtonPressed:(UIButton *)sender {
-    [self.delegate presentMatchedsViewController];
+    [self.delegate presentMatchesViewController];
     
 }
 

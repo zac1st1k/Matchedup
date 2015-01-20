@@ -165,7 +165,7 @@
                         <outlet property="tagLineLabel" destination="Fsp-EB-k5D" id="b6m-Qv-ylm"/>
                         <segue destination="1It-2F-O0K" kind="push" identifier="homeToProfileSegue" id="V7Q-aW-nI2"/>
                         <segue destination="MES-Q0-57e" kind="modal" identifier="homeToMatchSegue" id="yiK-so-tbf"/>
-                        <segue destination="k8M-ch-2pR" kind="push" identifier="homeToMatchsSegue" id="p7s-wW-9rr"/>
+                        <segue destination="k8M-ch-2pR" kind="push" identifier="homeToMatchesSegue" id="p7s-wW-9rr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o90-8E-Q1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -331,7 +331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1H4-4T-FqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1626" y="686"/>
+            <point key="canvasLocation" x="1626" y="747"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="IDc-tL-G6b">
@@ -360,7 +360,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bem-Ov-PAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2317" y="686"/>
+            <point key="canvasLocation" x="2317" y="747"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="Slo-yn-Ihz">
@@ -379,7 +379,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Xp-79-qst" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2998" y="686"/>
+            <point key="canvasLocation" x="3042" y="747"/>
         </scene>
         <!--Match View Controller-->
         <scene sceneID="HZ9-sy-XmJ">
@@ -448,7 +448,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tat-Gq-y7I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="918" y="686"/>
+            <point key="canvasLocation" x="918" y="747"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="A2l-gw-XvW">

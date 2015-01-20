@@ -47,7 +47,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //    [XZZTestUser saveTestUserToParse];
+//        [XZZTestUser saveTestUserToParse];
     [self.activityIndicator startAnimating];
     self.likeButton.enabled = NO;
     self.dislikeButton.enabled = NO;
@@ -59,6 +59,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             self.photos = objects;
+            NSLog(@"%@", objects);
             [self queryForCurrentPhotoIndex];
             self.activityIndicator.hidden = YES;
         }

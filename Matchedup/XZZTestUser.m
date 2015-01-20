@@ -19,7 +19,7 @@
     newUser.password = @"password1";
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
-            NSDictionary *profile = @{@"age":@28, @"birthday":@"11/12/1985", @"firstName":@"Julie", @"gender":@"femail", @"location":@"Berlin, Germany", @"name":@"Julie Adams"};
+            NSDictionary *profile = @{@"age":@22, @"birthday":@"16/5/1992", @"firstName":@"Faye", @"gender":@"female", @"location":@"Melbourne, Australia", @"name":@"Faye Hao", @"tagLine":@"I love Zac."};
             [newUser setObject:profile forKey:@"profile"];
             [newUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 UIImage *profileImage = [UIImage imageNamed:@"faye.png"];
