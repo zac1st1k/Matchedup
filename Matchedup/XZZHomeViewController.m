@@ -188,6 +188,29 @@
     }
 }
 
+- (BOOL)allowPhoto
+{
+    int maxAge = [[NSUserDefaults standardUserDefaults] integerForKey:kXZZAgeMaxKey];
+    BOOL men = [[NSUserDefaults standardUserDefaults] boolForKey:kXZZMenEnabledKey];
+    BOOL women = [[NSUserDefaults standardUserDefaults] boolForKey:kXZZWomenEnabledKey];
+    BOOL single = [[NSUserDefaults standardUserDefaults] boolForKey:kXZZSingleEnabledKey];
+    PFObject *photo = self.photos[self.currentPhotoIndex];
+    PFUser *user = photo[kXZZPhotoUserKey];
+    int userAge = [user[kXZZUserProfileKey][kXZZUserProfileAgeKey] intValue];
+    NSString *gender = user[kXZZUserProfileKey][kXZZUserProfileGenderKey];
+    NSString *relationshipStatus = user[kXZZUserProfileRelationsihpStatusKey];
+    if (userAge > maxAge)
+        return NO;
+    else if (men == NO && [gender isEqualToString:@"male"])
+        return NO;
+    else if (women == NO && [gender isEqualToString:@"female"])
+        return NO;
+    else if (single == NO && ([relationshipStatus isEqualToString:@"single"] || relationshipStatus == nil))
+        return NO;
+    else
+        return YES;
+}
+
 - (void)saveLike
 {
     PFObject *likeActivity = [PFObject objectWithClassName:KXZZActivityClassKey];
