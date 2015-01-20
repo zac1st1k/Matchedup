@@ -9,6 +9,7 @@
 #import "XZZMatchesViewController.h"
 #import <Parse/Parse.h>
 #import "XZZConstants.h"
+#import "XZZChatViewController.h"
 
 @interface XZZMatchesViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -34,7 +35,7 @@
     // Do any additional setup after loading the view.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self.tableView reloadData];
+    [self updateAvaliableChatRooms];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,15 +43,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    XZZChatViewController *chatVC = segue.destinationViewController;
+    NSIndexPath *indexPath = sender;
+    chatVC.chatRoom = [self.availableChatRooms objectAtIndex:indexPath.row];
 }
-*/
 
 #pragma mark - Helper Methods
 
@@ -71,6 +73,7 @@
             [self.tableView reloadData];
         }
     }];
+    NSLog(@"update chatrooms");
 }
 
 #pragma mark - UITableView DataSource
@@ -104,14 +107,21 @@
             PFObject *photo = objects[0];
             PFFile *pictureFile = photo[kXZZPhotoPictureKey];
             [pictureFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-                cell.imageView.image = [[UIImage imageWithData:data]];
+                cell.imageView.image = [UIImage imageWithData:data];
                 cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
             }];
         }
     }];
+    NSLog(@"setup cell");
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"matchesToChatSegue" sender:indexPath];
+    NSLog(@"selected row at index %i", indexPath.row);
+}
 
 @end

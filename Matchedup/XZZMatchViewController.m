@@ -36,7 +36,8 @@
             }];
         }
     }];
-    self.currentUserImageView.bounds = CGRectMake(0, 0, 180, 180);
+    self.currentUserImageView.bounds = CGRectMake(0, 0, 100, 100);
+    self.matchedUserImageView.bounds = CGRectMake(0, 0, 100, 100);
     self.currentUserImageView.contentMode = UIViewContentModeScaleToFill;
     self.matchedUserImageView.contentMode = UIViewContentModeScaleAspectFill;
    

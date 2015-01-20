@@ -95,6 +95,7 @@
 #pragma mark - IBActions
 
 - (IBAction)chatBarButtonItemPressed:(UIBarButtonItem *)sender {
+    [self performSegueWithIdentifier:@"homeToMatchesSegue" sender:nil];
 }
 
 - (IBAction)settingsBarButtonPressed:(UIBarButtonItem *)sender {
@@ -293,7 +294,7 @@
 
 #pragma mark - XZZMatchViewController Delegate
 
-- (void)presentMatchedsViewController
+- (void)presentMatchesViewController
 {
     [self dismissViewControllerAnimated:YES completion:^{
         [self performSegueWithIdentifier:@"homeToMatchesSegue" sender:nil];

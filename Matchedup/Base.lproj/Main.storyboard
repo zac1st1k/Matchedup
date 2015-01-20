@@ -327,40 +327,12 @@
                     <navigationItem key="navigationItem" id="Nw5-5B-sZq"/>
                     <connections>
                         <outlet property="tableView" destination="1y7-2J-xL9" id="1le-gK-EgZ"/>
+                        <segue destination="v1L-p9-K08" kind="push" identifier="matchesToChatSegue" id="faV-Dw-pFr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1H4-4T-FqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1626" y="747"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="IDc-tL-G6b">
-            <objects>
-                <tableViewController id="OGG-Gi-WcZ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="w80-Aj-QOV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="NVJ-CY-Jk2">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NVJ-CY-Jk2" id="tco-m5-Pxv">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="OGG-Gi-WcZ" id="3yC-n3-4sU"/>
-                            <outlet property="delegate" destination="OGG-Gi-WcZ" id="loS-zF-r6j"/>
-                        </connections>
-                    </tableView>
-                    <connections>
-                        <segue destination="v1L-p9-K08" kind="push" identifier="matchesToChatSegue" id="3wr-Sw-cGj"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bem-Ov-PAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2317" y="747"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="Slo-yn-Ihz">
@@ -379,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Xp-79-qst" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3042" y="747"/>
+            <point key="canvasLocation" x="2394" y="747"/>
         </scene>
         <!--Match View Controller-->
         <scene sceneID="HZ9-sy-XmJ">
