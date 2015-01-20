@@ -341,7 +341,7 @@
             </objects>
             <point key="canvasLocation" x="1626" y="0.0"/>
         </scene>
-        <!--Matches View Controller-->
+        <!--Matches!-->
         <scene sceneID="xbh-Ze-XRs">
             <objects>
                 <viewController id="k8M-ch-2pR" customClass="XZZMatchesViewController" sceneMemberID="viewController">
@@ -353,11 +353,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1y7-2J-xL9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1y7-2J-xL9">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="PWJ-Q9-qix" detailTextLabel="T8B-aV-a6Z" style="IBUITableViewCellStyleSubtitle" id="qqn-7t-vL8">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="PWJ-Q9-qix" detailTextLabel="T8B-aV-a6Z" imageView="crT-fb-mQR" rowHeight="76" style="IBUITableViewCellStyleSubtitle" id="qqn-7t-vL8">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qqn-7t-vL8" id="lpz-kH-2Gm">
@@ -375,6 +375,9 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Chat_user.png" id="crT-fb-mQR">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -391,7 +394,7 @@
                             <constraint firstItem="1y7-2J-xL9" firstAttribute="centerX" secondItem="iFm-jV-ztm" secondAttribute="centerX" id="t6o-Mb-7Vp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Nw5-5B-sZq"/>
+                    <navigationItem key="navigationItem" title="Matches!" id="Nw5-5B-sZq"/>
                     <connections>
                         <outlet property="tableView" destination="1y7-2J-xL9" id="1le-gK-EgZ"/>
                         <segue destination="v1L-p9-K08" kind="push" identifier="matchesToChatSegue" id="faV-Dw-pFr"/>
@@ -410,7 +413,7 @@
                         <viewControllerLayoutGuide type="bottom" id="dWb-gx-tsJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DLb-vz-5QU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -707,6 +710,7 @@
     <resources>
         <image name="AgeIcon.png" width="19" height="19"/>
         <image name="ChatIcon.png" width="22" height="22"/>
+        <image name="Chat_user.png" width="58" height="55"/>
         <image name="DislikeIcon.png" width="38" height="37"/>
         <image name="Facebook.png" width="200" height="25"/>
         <image name="InfoIcon.png" width="39" height="37"/>
