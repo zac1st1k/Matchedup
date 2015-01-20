@@ -32,8 +32,15 @@
     PFUser *user = self.photo[kXZZPhotoUserKey];
     self.locationLabel.text = user[kXZZUserProfileKey][kXZZUserProfileLocationKey];
     self.ageLabel.text = [NSString stringWithFormat:@"%@", user[kXZZUserProfileKey][kXZZUserProfileAgeKey]];
-    self.statusLabel.text = user[kXZZUserProfileKey][kXZZUserProfileRelationsihpStatusKey];
+    if (user[kXZZUserProfileKey][kXZZUserProfileRelationsihpStatusKey] == nil) {
+        self.statusLabel.text = @"Single";
+    }
+    else {
+        self.statusLabel.text = user[kXZZUserProfileKey][kXZZUserProfileRelationsihpStatusKey];
+    }
     self.tagLineLabel.text = user[kXZZUserTagLineKey];
+    self.view.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0];
+    self.title = user[kXZZUserProfileKey][kXZZUserProfileFirstNameKey];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,13 +49,25 @@
 }
 
 /*
-#pragma mark - Navigation
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - IBAction
+
+- (IBAction)likeButtonPressed:(UIButton *)sender
+{
+    [self.delegate didPressLike];
 }
-*/
+
+- (IBAction)dislikeButtonPressed:(UIButton *)sender
+{
+    [self.delegate didPressDislike];
+}
 
 @end

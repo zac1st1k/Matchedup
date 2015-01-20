@@ -13,7 +13,7 @@
 #import "XZZProfileViewController.h"
 #import "XZZMatchViewController.h"
 
-@interface XZZHomeViewController () <XZZMatchViewControllerDelegate>
+@interface XZZHomeViewController () <XZZMatchViewControllerDelegate, CCProfileViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *chatBarButtonItem;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *settingsBarButtonItem;
@@ -89,6 +89,7 @@
 
 - (void)setupViews
 {
+    self.view.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0];
     [self addShadowForView:self.buttonContainerView];
     [self addShadowForView:self.labelContainerView];
     self.photoImageView.layer.masksToBounds = YES;
@@ -117,6 +118,7 @@
     if ([segue.identifier isEqualToString:@"homeToProfileSegue"]) {
         XZZProfileViewController *nextViewController = segue.destinationViewController;
         nextViewController.photo = self.photo;
+        nextViewController.delegate = self;
     }
     else if ([segue.identifier isEqualToString:@"homeToMatchSegue"])
     {
@@ -375,6 +377,20 @@
     [self dismissViewControllerAnimated:YES completion:^{
         [self performSegueWithIdentifier:@"homeToMatchesSegue" sender:nil];
     }];
+}
+
+#pragma mark - XZZProfileViewController Delegate
+
+- (void)didPressLike
+{
+    [self.navigationController popViewControllerAnimated:NO];
+    [self checkLike];
+}
+
+- (void)didPressDislike
+{
+    [self.navigationController popViewControllerAnimated:NO];
+    [self checkDislike];
 }
 
 @end
