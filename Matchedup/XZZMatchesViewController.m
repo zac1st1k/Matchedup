@@ -121,7 +121,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self performSegueWithIdentifier:@"matchesToChatSegue" sender:indexPath];
-    NSLog(@"selected row at index %i", indexPath.row);
+    NSLog(@"selected row at index %i", (int)indexPath.row);
 }
 
 @end

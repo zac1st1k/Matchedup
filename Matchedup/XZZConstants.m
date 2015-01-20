@@ -49,4 +49,18 @@ NSString *const kXZZWomenEnabledKey = @"women";
 NSString *const kXZZSingleEnabledKey = @"single";
 NSString *const kXZZAgeMaxKey = @"ageMax";
 
+#pragma mark - ChatRoom
+
+NSString *const kXZZChatRoomClassRoomKey = @"ChatRoom";
+NSString *const kXZZChatRoomUser1Key = @"user1";
+NSString *const kXZZChatRoomUser2Key = @"user2";
+
+#pragma mark - Chat
+
+NSString *const kXZZChatClassKey = @"Chat";
+NSString *const kXZZChatChatroomKey = @"chatroom";
+NSString *const kXZZChatFromUserKey = @"fromUser";
+NSString *const kXZZChatToUserKey = @"toUser";
+NSString *const kXZZChatTextKey = @"text";
+
 @end

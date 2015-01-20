@@ -48,4 +48,18 @@ extern NSString *const kXZZWomenEnabledKey;
 extern NSString *const kXZZSingleEnabledKey;
 extern NSString *const kXZZAgeMaxKey;
 
+#pragma mark - ChatRoom
+
+extern NSString *const kXZZChatRoomClassRoomKey;
+extern NSString *const kXZZChatRoomUser1Key;
+extern NSString *const kXZZChatRoomUser2Key;
+
+#pragma mark - Chat
+
+extern NSString *const kXZZChatClassKey;
+extern NSString *const kXZZChatChatroomKey;
+extern NSString *const kXZZChatFromUserKey;
+extern NSString *const kXZZChatToUserKey;
+extern NSString *const kXZZChatTextKey;
+
 @end
