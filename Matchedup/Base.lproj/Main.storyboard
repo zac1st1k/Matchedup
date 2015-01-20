@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JZv-uu-oqn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MES-Q0-57e">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -365,8 +365,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="130" translatesAutoresizingMaskIntoConstraints="NO" id="96M-kh-jRe">
-                                <rect key="frame" x="36" y="40" width="130" height="130"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="130" image="faye.png" translatesAutoresizingMaskIntoConstraints="NO" id="96M-kh-jRe">
+                                <rect key="frame" x="36" y="40" width="210" height="130"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's a Match!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vk1-Xo-6NZ">
                                 <rect key="frame" x="252" y="290" width="95" height="20.5"/>
@@ -392,8 +392,8 @@
                                     <action selector="viewChatButtonPressed:" destination="MES-Q0-57e" eventType="touchUpInside" id="s3n-XX-0k7"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="130" translatesAutoresizingMaskIntoConstraints="NO" id="nZq-EF-fxD">
-                                <rect key="frame" x="434" y="40" width="130" height="130"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="130" image="faye.png" translatesAutoresizingMaskIntoConstraints="NO" id="nZq-EF-fxD">
+                                <rect key="frame" x="354" y="40" width="210" height="130"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -402,8 +402,10 @@
                             <constraint firstItem="BpS-cG-Pi2" firstAttribute="top" secondItem="22A-ti-JEw" secondAttribute="bottom" constant="20" id="76a-wM-WMC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FLi-d8-GoX" secondAttribute="trailing" constant="20" id="8hK-26-wdx"/>
                             <constraint firstItem="96M-kh-jRe" firstAttribute="top" secondItem="ahA-O6-mfh" secondAttribute="bottom" constant="20" id="GhK-az-gdf"/>
+                            <constraint firstItem="96M-kh-jRe" firstAttribute="width" secondItem="26F-da-TrE" secondAttribute="width" multiplier="0.35" id="MPx-6M-BdB"/>
                             <constraint firstItem="BpS-cG-Pi2" firstAttribute="top" secondItem="FLi-d8-GoX" secondAttribute="bottom" constant="20" id="Qym-6t-pVf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nZq-EF-fxD" secondAttribute="trailing" constant="20" id="ViR-Cs-zgj"/>
+                            <constraint firstItem="96M-kh-jRe" firstAttribute="width" secondItem="nZq-EF-fxD" secondAttribute="width" id="fWx-dT-W1K"/>
                             <constraint firstItem="22A-ti-JEw" firstAttribute="leading" secondItem="26F-da-TrE" secondAttribute="leadingMargin" constant="20" id="is3-bk-18o"/>
                             <constraint firstItem="nZq-EF-fxD" firstAttribute="top" secondItem="ahA-O6-mfh" secondAttribute="bottom" constant="20" id="jgF-F7-Liq"/>
                             <constraint firstAttribute="centerY" secondItem="vk1-Xo-6NZ" secondAttribute="centerY" id="qiy-Go-cJa"/>

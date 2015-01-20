@@ -19,6 +19,7 @@
 		117BA6DE1A638B2500923A25 /* XZZConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BA6DD1A638B2500923A25 /* XZZConstants.m */; };
 		118B325A1A6A59120039EB29 /* XZZMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 118B32591A6A59120039EB29 /* XZZMatchViewController.m */; };
 		118B325E1A6A5CBE0039EB29 /* XZZMatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 118B325D1A6A5CBE0039EB29 /* XZZMatchesViewController.m */; };
+		11B0C5971A6E275A00B6DADF /* defaultPrefsFile.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11B0C5961A6E275A00B6DADF /* defaultPrefsFile.plist */; };
 		11CE88DD1A66462700D895C6 /* faye.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CE88DC1A66462700D895C6 /* faye.png */; };
 		11CE88E11A66482700D895C6 /* XZZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CE88E01A66482700D895C6 /* XZZHomeViewController.m */; };
 		11CE88E51A664E4B00D895C6 /* XZZSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CE88E41A664E4B00D895C6 /* XZZSettingsViewController.m */; };
@@ -61,6 +62,7 @@
 		118B32591A6A59120039EB29 /* XZZMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZZMatchViewController.m; sourceTree = "<group>"; };
 		118B325C1A6A5CBE0039EB29 /* XZZMatchesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZZMatchesViewController.h; sourceTree = "<group>"; };
 		118B325D1A6A5CBE0039EB29 /* XZZMatchesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZZMatchesViewController.m; sourceTree = "<group>"; };
+		11B0C5961A6E275A00B6DADF /* defaultPrefsFile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaultPrefsFile.plist; sourceTree = "<group>"; };
 		11CE88DC1A66462700D895C6 /* faye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faye.png; sourceTree = "<group>"; };
 		11CE88DF1A66482700D895C6 /* XZZHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZZHomeViewController.h; sourceTree = "<group>"; };
 		11CE88E01A66482700D895C6 /* XZZHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZZHomeViewController.m; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			children = (
 				11CE88E31A664E4B00D895C6 /* XZZSettingsViewController.h */,
 				11CE88E41A664E4B00D895C6 /* XZZSettingsViewController.m */,
+				11B0C5961A6E275A00B6DADF /* defaultPrefsFile.plist */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				117BA6BE1A62A68500923A25 /* Main.storyboard in Resources */,
 				117BA6C31A62A68500923A25 /* LaunchScreen.xib in Resources */,
 				117BA6C01A62A68500923A25 /* Images.xcassets in Resources */,
+				11B0C5971A6E275A00B6DADF /* defaultPrefsFile.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
