@@ -49,10 +49,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //        [XZZTestUser saveTestUserToParse];
+    [self setupViews];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor colorWithRed:12/255.0 green:158/255.0 blue:255/255.0 alpha:1.0], NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:20.0]};
     self.photoImageView.image = nil;
     self.firstNameLabel.text = nil;
     self.ageLabel.text = nil;
-    [self setupViews];
+    self.activityIndicator.hidden = NO;
+    [self.activityIndicator startAnimating];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -60,7 +67,6 @@
     self.photoImageView.image = nil;
     self.firstNameLabel.text = nil;
     self.ageLabel.text = nil;
-    [self.activityIndicator startAnimating];
     self.likeButton.enabled = NO;
     self.dislikeButton.enabled = NO;
     self.infoButton.enabled = NO;
@@ -226,7 +232,7 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No more Users to View" message:@"Check Back Later for more People!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         [self.activityIndicator stopAnimating];
-
+        
     }
 }
 

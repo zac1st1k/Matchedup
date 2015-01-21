@@ -25,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBar.titleTextAttributes = nil;
     PFFile *pictureFile = self.photo[kXZZPhotoPictureKey];
     [pictureFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         self.profilePictureImageView.image = [UIImage imageWithData:data];

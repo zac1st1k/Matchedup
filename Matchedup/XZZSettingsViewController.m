@@ -37,7 +37,11 @@
     [self.womenSwitch addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventValueChanged];
     [self.singleSwitch addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventValueChanged];
     self.ageLabel.text = [NSString stringWithFormat:@"%i", (int)self.ageSlider.value];
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBar.titleTextAttributes = nil;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *availableChatRooms;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -35,6 +36,14 @@
     // Do any additional setup after loading the view.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self.activityIndicator startAnimating];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBar.titleTextAttributes = nil;
+    self.activityIndicator.hidden = NO;
+    [self.activityIndicator startAnimating];
     [self updateAvaliableChatRooms];
 }
 
@@ -89,28 +98,33 @@
     PFObject *chatRoom = [self.availableChatRooms objectAtIndex:indexPath.row];
     PFUser *likedUser;
     PFUser *currentUser = [PFUser currentUser];
-    PFUser *testUser1 = chatRoom[@"user1"];
+    PFUser *testUser1 = chatRoom[kXZZChatRoomUser1Key];
     if ([testUser1.objectId isEqual:currentUser.objectId]) {
-        likedUser = [chatRoom objectForKey:@"user2"];
+        likedUser = [chatRoom objectForKey:kXZZChatRoomUser2Key];
     }
     else {
-        likedUser = [chatRoom objectForKey:@"user1"];
+        likedUser = [chatRoom objectForKey:kXZZChatRoomUser1Key];
     }
-    cell.textLabel.text = likedUser [@"profile"][@"firstName"];
+    cell.textLabel.text = likedUser[@"profile"][@"firstName"];
     cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    PFQuery *queryForPhoto = [[PFQuery alloc] initWithClassName:@"Photo"];
-    [queryForPhoto whereKey:@"user" equalTo:likedUser];
+    PFQuery *queryForPhoto = [[PFQuery alloc] initWithClassName:kXZZPhotoClassKey];
+    [queryForPhoto whereKey:kXZZPhotoUserKey equalTo:likedUser];
     [queryForPhoto findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if ([objects count] > 0) {
+            NSLog(@"%@",objects);
             PFObject *photo = objects[0];
+            NSLog(@"%@", photo);
             PFFile *pictureFile = photo[kXZZPhotoPictureKey];
             [pictureFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                 cell.imageView.image = [UIImage imageWithData:data];
                 cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
+                [self.tableView reloadData];
+
             }];
         }
     }];
     NSLog(@"setup cell");
+    self.activityIndicator.hidden = YES;
     return cell;
 }
 

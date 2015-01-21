@@ -10,7 +10,7 @@
 #import "XZZConstants.h"
 #import <Parse/Parse.h>
 
-@interface XZZEditProfileViewController ()
+@interface XZZEditProfileViewController () <UITextViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *saveBarButtonItem;
 @property (strong, nonatomic) IBOutlet UITextView *tagLineTextView;
@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tagLineTextView.delegate = self;
+    self.view.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0];
     PFQuery *query = [PFQuery queryWithClassName:kXZZPhotoClassKey];
     [query whereKey:kXZZPhotoUserKey equalTo:[PFUser currentUser]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -37,6 +39,7 @@
             self.tagLineTextView.text = [[PFUser currentUser] objectForKey:kXZZUserTagLineKey];
         }
     }];
+    self.title = [[PFUser currentUser] objectForKey:kXZZUserProfileFirstNameKey];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,8 +56,6 @@
     [self.navigationController popViewControllerAnimated:YES];    
 }
 
-
-
 /*
 #pragma mark - Navigation
 
@@ -65,5 +66,17 @@
 }
 */
 
+#pragma mark - TextView Delegate
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@"\n"]) {
+        [self.tagLineTextView resignFirstResponder];
+        return NO;
+    }
+    else {
+        return YES;
+    }
+}
 
 @end
