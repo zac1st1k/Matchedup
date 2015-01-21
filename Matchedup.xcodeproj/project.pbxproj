@@ -19,6 +19,7 @@
 		117BA6DE1A638B2500923A25 /* XZZConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BA6DD1A638B2500923A25 /* XZZConstants.m */; };
 		118B325A1A6A59120039EB29 /* XZZMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 118B32591A6A59120039EB29 /* XZZMatchViewController.m */; };
 		118B325E1A6A5CBE0039EB29 /* XZZMatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 118B325D1A6A5CBE0039EB29 /* XZZMatchesViewController.m */; };
+		11ACCB521A6F4575003D1E2B /* XZZTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ACCB511A6F4575003D1E2B /* XZZTransitionAnimator.m */; };
 		11B0C5971A6E275A00B6DADF /* defaultPrefsFile.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11B0C5961A6E275A00B6DADF /* defaultPrefsFile.plist */; };
 		11B0C63C1A6E498500B6DADF /* BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B0C59B1A6E498500B6DADF /* BG.png */; };
 		11B0C63D1A6E498500B6DADF /* BG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B0C59C1A6E498500B6DADF /* BG@2x.png */; };
@@ -210,6 +211,8 @@
 		118B32591A6A59120039EB29 /* XZZMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZZMatchViewController.m; sourceTree = "<group>"; };
 		118B325C1A6A5CBE0039EB29 /* XZZMatchesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZZMatchesViewController.h; sourceTree = "<group>"; };
 		118B325D1A6A5CBE0039EB29 /* XZZMatchesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZZMatchesViewController.m; sourceTree = "<group>"; };
+		11ACCB501A6F4575003D1E2B /* XZZTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZZTransitionAnimator.h; sourceTree = "<group>"; };
+		11ACCB511A6F4575003D1E2B /* XZZTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZZTransitionAnimator.m; sourceTree = "<group>"; };
 		11B0C5961A6E275A00B6DADF /* defaultPrefsFile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaultPrefsFile.plist; sourceTree = "<group>"; };
 		11B0C59B1A6E498500B6DADF /* BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG.png; sourceTree = "<group>"; };
 		11B0C59C1A6E498500B6DADF /* BG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG@2x.png"; sourceTree = "<group>"; };
@@ -482,11 +485,21 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		118205981A6F3E6C008AF4C5 /* Transition Helper */ = {
+			isa = PBXGroup;
+			children = (
+				11ACCB501A6F4575003D1E2B /* XZZTransitionAnimator.h */,
+				11ACCB511A6F4575003D1E2B /* XZZTransitionAnimator.m */,
+			);
+			name = "Transition Helper";
+			sourceTree = "<group>";
+		};
 		118B32571A6A58C90039EB29 /* Match */ = {
 			isa = PBXGroup;
 			children = (
 				118B32581A6A59120039EB29 /* XZZMatchViewController.h */,
 				118B32591A6A59120039EB29 /* XZZMatchViewController.m */,
+				118205981A6F3E6C008AF4C5 /* Transition Helper */,
 			);
 			name = Match;
 			sourceTree = "<group>";
@@ -1127,6 +1140,7 @@
 				117B8FB01A6BE57E00552504 /* XZZChatViewController.m in Sources */,
 				11CE88ED1A669AE300D895C6 /* XZZProfileViewController.m in Sources */,
 				117BA6B21A62A68500923A25 /* main.m in Sources */,
+				11ACCB521A6F4575003D1E2B /* XZZTransitionAnimator.m in Sources */,
 				11CE88E91A66981200D895C6 /* XZZEditProfileViewController.m in Sources */,
 				11CE88E51A664E4B00D895C6 /* XZZSettingsViewController.m in Sources */,
 				118B325A1A6A59120039EB29 /* XZZMatchViewController.m in Sources */,

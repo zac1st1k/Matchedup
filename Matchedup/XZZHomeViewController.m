@@ -12,8 +12,9 @@
 #import "XZZTestUser.h"
 #import "XZZProfileViewController.h"
 #import "XZZMatchViewController.h"
+#import "XZZTransitionAnimator.h"
 
-@interface XZZHomeViewController () <XZZMatchViewControllerDelegate, CCProfileViewControllerDelegate>
+@interface XZZHomeViewController () <XZZMatchViewControllerDelegate, CCProfileViewControllerDelegate, UIViewControllerTransitioningDelegate>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *chatBarButtonItem;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *settingsBarButtonItem;
@@ -126,12 +127,12 @@
         nextViewController.photo = self.photo;
         nextViewController.delegate = self;
     }
-    else if ([segue.identifier isEqualToString:@"homeToMatchSegue"])
-    {
-        XZZMatchViewController *matchViewController = segue.destinationViewController;
-        matchViewController.matchedUserImage = self.photoImageView.image;
-        matchViewController.delegate = self;
-    }
+//    else if ([segue.identifier isEqualToString:@"homeToMatchSegue"])
+//    {
+//        XZZMatchViewController *matchViewController = segue.destinationViewController;
+//        matchViewController.matchedUserImage = self.photoImageView.image;
+//        matchViewController.delegate = self;
+//    }
 }
 
 #pragma mark - IBActions
@@ -370,7 +371,15 @@
             [chatroom setObject:[PFUser currentUser] forKey:kXZZChatRoomUser1Key];
             [chatroom setObject:self.photo[kXZZPhotoUserKey] forKey:kXZZChatRoomUser2Key];
             [chatroom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                [self performSegueWithIdentifier:@"homeToMatchSegue" sender:nil];
+//                [self performSegueWithIdentifier:@"homeToMatchSegue" sender:nil];
+                UIStoryboard *myStoryboard = self.storyboard;
+                XZZMatchViewController *matchViewController = [myStoryboard instantiateViewControllerWithIdentifier:@"matchVC"];
+                matchViewController.view.backgroundColor = [UIColor colorWithRed:0/255.0f green:0/255.0f blue:0/255.0f alpha:0.75f];
+                matchViewController.transitioningDelegate = self;
+                matchViewController.delegate = self;
+                matchViewController.matchedUserImage = self.photoImageView.image;
+                matchViewController.modalPresentationStyle = UIModalPresentationCustom;
+                [self presentViewController:matchViewController animated:YES completion:nil];
             }];
         }
     }];
@@ -397,6 +406,21 @@
 {
     [self.navigationController popViewControllerAnimated:NO];
     [self checkDislike];
+}
+
+#pragma mark - UIViewControllerTransitioningDelegate
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+    XZZTransitionAnimator *animator = [[XZZTransitionAnimator alloc] init];
+    animator.presenting = YES;
+    return animator;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    XZZTransitionAnimator *animator = [[XZZTransitionAnimator alloc] init];
+    return animator;
 }
 
 @end
