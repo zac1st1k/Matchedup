@@ -10,6 +10,9 @@
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
+#import <Mixpanel.h>
+
+#define MIXPANEL_TOKEN @"2a9d1a9b271e0d7ac0c8049a6d6acc05"
 
 @interface AppDelegate ()
 
@@ -24,6 +27,9 @@
                   clientKey:@"nRMJwUEnqVHop6gqfScFJ4ejVJTdqGACxtPWrFcS"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [PFFacebookUtils initializeFacebook];
+    
+    [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
+    
     NSString *defaultPrefsFile = [[NSBundle mainBundle] pathForResource:@"defaultPrefsFile" ofType:@"plist"];
     NSDictionary *defaultPreferences = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPreferences];

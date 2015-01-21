@@ -12,6 +12,7 @@
 #import "XZZTestUser.h"
 #import "XZZProfileViewController.h"
 #import "XZZMatchViewController.h"
+#import <Mixpanel.h>
 
 @interface XZZHomeViewController () <XZZMatchViewControllerDelegate, CCProfileViewControllerDelegate>
 
@@ -144,6 +145,9 @@
 }
 
 - (IBAction)likeButtonPressed:(UIButton *)sender {
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"Like"];
+    [mixpanel flush];
     [self checkLike];
 }
 
@@ -152,6 +156,9 @@
 }
 
 - (IBAction)dislikeButtonPressed:(UIButton *)sender {
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"Dislike"];
+    [mixpanel flush];
     [self checkDislike];
 }
 

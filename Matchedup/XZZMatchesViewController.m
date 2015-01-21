@@ -95,6 +95,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+//    cell.imageView.image = [UIImage imageNamed:@"Chat_user.png"];
     PFObject *chatRoom = [self.availableChatRooms objectAtIndex:indexPath.row];
     PFUser *likedUser;
     PFUser *currentUser = [PFUser currentUser];
@@ -118,9 +119,8 @@
             [pictureFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                 cell.imageView.image = [UIImage imageWithData:data];
                 cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
-                [self.tableView reloadData];
-
             }];
+//           [self.tableView reloadData];//Boost Parse API requests
         }
     }];
     NSLog(@"setup cell");
