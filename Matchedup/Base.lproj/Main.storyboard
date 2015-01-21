@@ -191,7 +191,7 @@
                         <outlet property="photoImageView" destination="fSo-Rl-snh" id="leR-Wu-yBN"/>
                         <outlet property="settingsBarButtonItem" destination="RXg-zP-QPh" id="VP0-uZ-yci"/>
                         <segue destination="1It-2F-O0K" kind="push" identifier="homeToProfileSegue" id="V7Q-aW-nI2"/>
-                        <segue destination="MES-Q0-57e" kind="modal" identifier="homeToMatchSegue" id="yiK-so-tbf"/>
+                        <segue destination="MES-Q0-57e" kind="custom" identifier="homeToMatchSegue" id="yiK-so-tbf"/>
                         <segue destination="k8M-ch-2pR" kind="push" identifier="homeToMatchesSegue" id="p7s-wW-9rr"/>
                     </connections>
                 </viewController>
@@ -377,7 +377,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="2F12B975-8F33-4473-A214-2246EF76C80B" id="crT-fb-mQR">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="7D686A03-E634-48E4-AEFA-1C47DB57BD7B" id="crT-fb-mQR">
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -443,7 +443,7 @@
         <!--Match View Controller-->
         <scene sceneID="HZ9-sy-XmJ">
             <objects>
-                <viewController id="MES-Q0-57e" customClass="XZZMatchViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="matchVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MES-Q0-57e" customClass="XZZMatchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ahA-O6-mfh"/>
                         <viewControllerLayoutGuide type="bottom" id="BpS-cG-Pi2"/>
@@ -452,51 +452,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="130" image="faye.png" translatesAutoresizingMaskIntoConstraints="NO" id="96M-kh-jRe">
-                                <rect key="frame" x="36" y="40" width="210" height="130"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0C-Lm-HrF">
+                                <rect key="frame" x="16" y="70" width="568" height="300"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajx-Vn-OnE">
+                                        <rect key="frame" x="149" y="20" width="270" height="130"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="130" image="faye.png" translatesAutoresizingMaskIntoConstraints="NO" id="96M-kh-jRe">
+                                                <rect key="frame" x="140" y="0.0" width="130" height="130"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="130" image="faye.png" translatesAutoresizingMaskIntoConstraints="NO" id="nZq-EF-fxD">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="nZq-EF-fxD" firstAttribute="leading" secondItem="ajx-Vn-OnE" secondAttribute="leading" id="FcA-UT-8ZN"/>
+                                            <constraint firstAttribute="trailing" secondItem="96M-kh-jRe" secondAttribute="trailing" id="L5y-Hx-VYE"/>
+                                            <constraint firstItem="96M-kh-jRe" firstAttribute="top" secondItem="ajx-Vn-OnE" secondAttribute="top" id="TAz-TO-PUA"/>
+                                            <constraint firstItem="nZq-EF-fxD" firstAttribute="top" secondItem="ajx-Vn-OnE" secondAttribute="top" id="adM-ic-siN"/>
+                                            <constraint firstAttribute="height" constant="130" id="rwJ-UL-23f"/>
+                                            <constraint firstAttribute="width" constant="270" id="uBJ-kh-DMF"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLi-d8-GoX">
+                                        <rect key="frame" x="504" y="38" width="18" height="22"/>
+                                        <state key="normal" image="Close-Button.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="keepSearchingButtonPressed:" destination="MES-Q0-57e" eventType="touchUpInside" id="p8n-fB-Y4L"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22A-ti-JEw">
+                                        <rect key="frame" x="382" y="198" width="22" height="22"/>
+                                        <state key="normal" image="ChatNow_Icon.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="viewChatButtonPressed:" destination="MES-Q0-57e" eventType="touchUpInside" id="s3n-XX-0k7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ajx-Vn-OnE" firstAttribute="top" secondItem="z0C-Lm-HrF" secondAttribute="top" constant="20" id="83a-eG-aZn"/>
+                                    <constraint firstItem="FLi-d8-GoX" firstAttribute="top" secondItem="z0C-Lm-HrF" secondAttribute="top" id="BMk-MP-eYE"/>
+                                    <constraint firstAttribute="centerX" secondItem="ajx-Vn-OnE" secondAttribute="centerX" id="aUD-g5-8p6"/>
+                                    <constraint firstAttribute="trailing" secondItem="FLi-d8-GoX" secondAttribute="trailing" id="wHA-qY-JWM"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's a Match!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vk1-Xo-6NZ">
-                                <rect key="frame" x="252" y="290" width="95" height="20.5"/>
+                                <rect key="frame" x="252.5" y="265" width="95" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLi-d8-GoX">
-                                <rect key="frame" x="455" y="550" width="109" height="30"/>
-                                <state key="normal" title="Keep Searching">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keepSearchingButtonPressed:" destination="MES-Q0-57e" eventType="touchUpInside" id="p8n-fB-Y4L"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22A-ti-JEw">
-                                <rect key="frame" x="36" y="550" width="70" height="30"/>
-                                <state key="normal" title="View Chat">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="viewChatButtonPressed:" destination="MES-Q0-57e" eventType="touchUpInside" id="s3n-XX-0k7"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="130" image="faye.png" translatesAutoresizingMaskIntoConstraints="NO" id="nZq-EF-fxD">
-                                <rect key="frame" x="354" y="40" width="210" height="130"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="96M-kh-jRe" firstAttribute="leading" secondItem="26F-da-TrE" secondAttribute="leadingMargin" constant="20" id="3jC-gZ-DHv"/>
-                            <constraint firstItem="BpS-cG-Pi2" firstAttribute="top" secondItem="22A-ti-JEw" secondAttribute="bottom" constant="20" id="76a-wM-WMC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FLi-d8-GoX" secondAttribute="trailing" constant="20" id="8hK-26-wdx"/>
-                            <constraint firstItem="96M-kh-jRe" firstAttribute="top" secondItem="ahA-O6-mfh" secondAttribute="bottom" constant="20" id="GhK-az-gdf"/>
-                            <constraint firstItem="96M-kh-jRe" firstAttribute="width" secondItem="26F-da-TrE" secondAttribute="width" multiplier="0.35" id="MPx-6M-BdB"/>
-                            <constraint firstItem="BpS-cG-Pi2" firstAttribute="top" secondItem="FLi-d8-GoX" secondAttribute="bottom" constant="20" id="Qym-6t-pVf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nZq-EF-fxD" secondAttribute="trailing" constant="20" id="ViR-Cs-zgj"/>
-                            <constraint firstItem="96M-kh-jRe" firstAttribute="width" secondItem="nZq-EF-fxD" secondAttribute="width" id="fWx-dT-W1K"/>
-                            <constraint firstItem="22A-ti-JEw" firstAttribute="leading" secondItem="26F-da-TrE" secondAttribute="leadingMargin" constant="20" id="is3-bk-18o"/>
-                            <constraint firstItem="nZq-EF-fxD" firstAttribute="top" secondItem="ahA-O6-mfh" secondAttribute="bottom" constant="20" id="jgF-F7-Liq"/>
-                            <constraint firstAttribute="centerY" secondItem="vk1-Xo-6NZ" secondAttribute="centerY" id="qiy-Go-cJa"/>
-                            <constraint firstAttribute="centerX" secondItem="vk1-Xo-6NZ" secondAttribute="centerX" id="ws1-mh-met"/>
+                            <constraint firstItem="z0C-Lm-HrF" firstAttribute="height" secondItem="26F-da-TrE" secondAttribute="height" multiplier="0.5" id="1B6-C8-Sqp"/>
+                            <constraint firstItem="z0C-Lm-HrF" firstAttribute="leading" secondItem="26F-da-TrE" secondAttribute="leadingMargin" id="28q-ze-MO2"/>
+                            <constraint firstItem="vk1-Xo-6NZ" firstAttribute="top" secondItem="ajx-Vn-OnE" secondAttribute="bottom" constant="45" id="8O3-kS-ylR"/>
+                            <constraint firstAttribute="centerX" secondItem="z0C-Lm-HrF" secondAttribute="centerX" id="9ac-C8-h11"/>
+                            <constraint firstItem="vk1-Xo-6NZ" firstAttribute="top" secondItem="22A-ti-JEw" secondAttribute="top" id="FyT-99-cgD"/>
+                            <constraint firstItem="22A-ti-JEw" firstAttribute="leading" secondItem="vk1-Xo-6NZ" secondAttribute="trailing" constant="10" id="Sk6-gm-Jaq"/>
+                            <constraint firstItem="z0C-Lm-HrF" firstAttribute="top" secondItem="ahA-O6-mfh" secondAttribute="bottom" constant="50" id="acF-WA-SVf"/>
+                            <constraint firstAttribute="centerX" secondItem="vk1-Xo-6NZ" secondAttribute="centerX" id="asm-we-f8w"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="z0C-Lm-HrF" secondAttribute="trailing" id="jGP-YS-LqB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8x5-yj-t1C"/>
@@ -736,7 +759,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="2F12B975-8F33-4473-A214-2246EF76C80B" width="58" height="55">
+        <image name="7D686A03-E634-48E4-AEFA-1C47DB57BD7B" width="58" height="55">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -1021,6 +1044,8 @@ AAAAAAAAQJI
         </image>
         <image name="AgeIcon.png" width="19" height="19"/>
         <image name="ChatIcon.png" width="22" height="22"/>
+        <image name="ChatNow_Icon.png" width="22" height="22"/>
+        <image name="Close-Button.png" width="18" height="18"/>
         <image name="DislikeIcon.png" width="38" height="37"/>
         <image name="EditProfile.png" width="253" height="32"/>
         <image name="Facebook.png" width="200" height="25"/>
